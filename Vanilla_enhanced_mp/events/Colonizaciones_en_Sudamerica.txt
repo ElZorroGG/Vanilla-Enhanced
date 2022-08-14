@@ -105,7 +105,8 @@ country_event = {
 	option = {
 		name = "EVTOPTA112839"
 		set_country_flag = the_north_of_patagonia_is_ours
-			2391 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 21 add_core = ARG }	
+			2391 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 21 add_core = ARG }
+			2355 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 21 add_core = ARG }	
 			2395 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 21 add_core = ARG }
 			2393 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 21 add_core = ARG }
 			2354 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 21 add_core = ARG }

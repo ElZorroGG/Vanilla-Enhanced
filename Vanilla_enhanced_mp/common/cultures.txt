@@ -861,24 +861,6 @@ turko_semitic = {
 arab = {
 	leader = arab
 	unit = MiddleEasternGC
-	afro_asiatic = {
-		color = {74 140 243}
-		first_names = { 
-			"Abd Allah" "Abd al-Karim" "Abd al-Malik" "Abd al-Qadir" "Abd al-Rahman" "Abu Bakr" Ahmad Ali 
-			Fawzi Fuad Halil Hasan Hisham Ibrahim Ishaq Iskandar Ja'far Jamal Kamil Khalid 
-			Muhammad Mustafa "Nur al-Din" "Sa'd al-Din" Salim  Sa'ud Shukri
-			Tawfiq Umar Uthman Yahya Yusuf Zafir 		
-			}
-		
-		last_names = { 
-			"ibn Abd Allah" "ibn Abd al-Qadir" "ibn Abu Bakr" "ibn Ahmad" "ibn Ali"
-			"ibn Fuad" "ibn Halil" "ibn Hasan" "ibn Hisham" "ibn Ishaq" "ibn Ja'far" "ibm Kamil" "ibn Khalid" 
-			"ibn Muhammad" "ibn Mustafa" "ibn Salim"  
-			"ibn Umar" "ibn Uthman" "ibn Yusuf"
-			"al-Najdi" "al-Hijazi"   
-			}
-			radicalism = 10
-		}
 	maghrebi = {
 		color = {24 103 22}
 		first_names = { 
@@ -1963,7 +1945,7 @@ latin_american_cultures = {
 	}
 	south_andean = {
 		color = {116 156 146}
-		first_names = { Adolfo Agustín Alejandro Andrés Aníbal Antonio Bartolomé Bernardo David Diego
+		first_names = { Adolfo Jin Agustín Alejandro Andrés Aníbal Antonio Bartolomé Bernardo David Diego
 		Domingo Eduardo Emiliano Emilio Enrique Esteban Eusebio Federico Felipe Francisco
 		Germán Hernando Hilarión Ignacio Isidoro Ismael Jorge José "José Miguel" Juan
 		"Juan Antonio" "Juan Francisco" Justo Ladislao Luis Manuel Mariano Miguel Narciso
@@ -2083,6 +2065,24 @@ west_african = {
 		last_names = { Prempeh Bonsu Dua Karikari Dwomo Panyin Sekyere Fofie Asiba
 		}
 	}
+	afro_asiatic = {
+		color = {74 140 243}
+		first_names = { 
+			"Abd Allah" "Abd al-Karim" "Abd al-Malik" "Abd al-Qadir" "Abd al-Rahman" "Abu Bakr" Ahmad Ali 
+			Fawzi Fuad Halil Hasan Hisham Ibrahim Ishaq Iskandar Ja'far Jamal Kamil Khalid 
+			Muhammad Mustafa "Nur al-Din" "Sa'd al-Din" Salim  Sa'ud Shukri
+			Tawfiq Umar Uthman Yahya Yusuf Zafir 		
+			}
+		
+		last_names = { 
+			"ibn Abd Allah" "ibn Abd al-Qadir" "ibn Abu Bakr" "ibn Ahmad" "ibn Ali"
+			"ibn Fuad" "ibn Halil" "ibn Hasan" "ibn Hisham" "ibn Ishaq" "ibn Ja'far" "ibm Kamil" "ibn Khalid" 
+			"ibn Muhammad" "ibn Mustafa" "ibn Salim"  
+			"ibn Umar" "ibn Uthman" "ibn Yusuf"
+			"al-Najdi" "al-Hijazi"   
+			}
+			radicalism = 10
+		}
 }
 
 central_african = {

@@ -71,7 +71,7 @@
 	farmers = {
 		culture = beifaren
 		religion = mahayana
-		size = 845725
+		size = 745725
 	}
 
 	aristocrats = {
@@ -211,7 +211,7 @@
 	farmers = {
 		culture = beifaren
 		religion = mahayana
-		size = 880950
+		size = 680950
 	}
 
 	aristocrats = {
@@ -377,7 +377,7 @@
 	farmers = {
 		culture = beifaren
 		religion = mahayana
-		size = 780575
+		size = 680575
 	}
 
 	aristocrats = {
@@ -469,7 +469,7 @@
 	farmers = {
 		culture = beifaren
 		religion = mahayana
-		size = 708275
+		size = 508275
 	}
 
 	aristocrats = {
@@ -561,7 +561,7 @@
 	farmers = {
 		culture = beifaren
 		religion = mahayana
-		size = 780900
+		size = 580900
 	}
 }
 #Sizhou (2688000/672000 POPS)
@@ -12503,7 +12503,7 @@
 	farmers = {
 		culture = beifaren
 		religion = mahayana
-		size = 1192125
+		size = 892125
 	}
 
 }

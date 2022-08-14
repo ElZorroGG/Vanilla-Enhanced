@@ -129,7 +129,7 @@ political_decisions = {
 		potential = {
 			tag = IBE
 			has_country_flag = european_expansion
-			NOT = { has_country_flag = iberian_italy }
+			NOT = { has_country_flag = iberian_italy2 }
 		}	
 		allow = {
 			has_country_flag = european_expansion
@@ -139,7 +139,7 @@ political_decisions = {
 			owns = 2567			}
 					
 		effect = {
-			set_country_flag = iberian_italy
+			set_country_flag = iberian_italy2
 			prestige = 5
 			add_accepted_culture = south_italian
 		ai_will_do = {

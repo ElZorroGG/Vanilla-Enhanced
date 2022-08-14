@@ -187,6 +187,7 @@ political_decisions = {
 				add_core = NGF
 			}			
 			change_tag = NGF
+			add_accepted_culture = south_german
 			FRA = {
 				country_event = { id=110073 days=0 }
 			}
@@ -869,5 +870,47 @@ unite_moldavia_wallachia = {
 		ai_will_do = {
 			factor = 1
 		}
-	}	
+	}
+	
+	Unite_germans_for_french_expansion = {
+		news = yes
+		news_desc_long = "form_germany_NEWS_LONG"
+		news_desc_medium = "form_germany_NEWS_MEDIUM"
+		news_desc_short = "form_germany_NEWS_SHORT"
+		potential = {
+			FRA = {
+				owns = 573
+				owns = 576
+			}
+			OR = { tag = AUS tag = KUK }
+			NOT = {
+				exists = HRE
+			}
+		}
+		
+		allow = {
+			war = no
+			FRA = {
+				owns = 573
+				owns = 576
+			}
+		}
+		
+		effect = {
+			prestige = 20
+			change_tag = HRE
+			add_accepted_culture = north_german
+			add_accepted_culture = south_german
+			add_accepted_culture = czech
+			any_country = {
+				limit = {
+					is_culture_group = germanic
+					NOT = { tag = UBD tag = THIS }
+				}
+				country_event = { id=111011 days=0 } }
+				GER = { all_core = { add_core = THIS } }
+		ai_will_do = {
+			factor = 1 }
+		}
+	}
 }

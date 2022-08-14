@@ -9,6 +9,9 @@ country_event = {
 	trigger = { 
 		tag = ROM
 		exists = ROM
+		OR = { 
+		ROM = { vassal_of = TUR }
+		ROM = { vassal_of = OTO } }
 		NOT = { 
 			has_global_flag = romania_independent
 			}
@@ -28,6 +31,9 @@ country_event = {
 	option = {
 		name = "EVTOPTA103201"
 		TUR = {
+			release_vassal = ROM
+		}
+		OTO = {
 			release_vassal = ROM
 		}
 	set_global_flag = romania_independent

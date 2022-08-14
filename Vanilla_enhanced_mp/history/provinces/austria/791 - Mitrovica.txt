@@ -7,6 +7,7 @@ add_core = SER
 add_core = HUN
 add_core = VJV
 add_core = YUG
+add_core = CRO
 
 trade_goods = timber
 

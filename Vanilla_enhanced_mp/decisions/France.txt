@@ -458,7 +458,6 @@ French_caledonia = {
 congress_of_vienna
 			}
            ai = no
-			has_country_flag = crisis_on_the_rhine
 			owns = 572
 		}
 		
@@ -489,7 +488,6 @@ congress_of_vienna
 				has_country_flag = french_speaking
 			}
            ai = no
-			has_country_flag = crisis_on_the_rhine
 			has_country_flag = congress_of_vienna
 		}
 		
@@ -536,7 +534,6 @@ congress_of_vienna
 				has_country_flag = 
 france_gets_its_final_form
 			}
-			has_country_flag = crisis_on_the_rhine
 			has_country_flag = congress_of_vienna
 			has_country_flag = french_speaking
 		}
@@ -584,7 +581,6 @@ france_gets_its_final_form
 		potential = {
 			tag = FRA
 			has_country_flag = france_gets_its_final_form
-			has_country_flag = crisis_on_the_rhine
 			has_country_flag = congress_of_vienna
 			has_country_flag = french_speaking
 			NOT = {

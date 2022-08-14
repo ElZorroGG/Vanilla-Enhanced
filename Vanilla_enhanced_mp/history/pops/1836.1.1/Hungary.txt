@@ -83,7 +83,7 @@
 	farmers = {
 		culture = hungarian
 		religion = catholic
-		size = 10125 
+		size = 11125 
 	}
 
 	clergymen = {
@@ -133,7 +133,7 @@
 	artisans = {
 		culture = south_german
 		religion = catholic
-		size = 1500
+		size = 4000
 	}
 
 	soldiers = {
@@ -465,7 +465,7 @@
 	soldiers = {
 		culture = hungarian
 		religion = catholic
-		size = 1100 
+		size = 6600 
 	}
 
 	farmers = {
@@ -593,7 +593,7 @@
 	soldiers = {
 		culture = hungarian
 		religion = catholic
-		size = 3100 
+		size = 6900 
 	}
 
 	farmers = {
@@ -751,7 +751,7 @@
 	soldiers = {
 		culture = hungarian
 		religion = protestant
-		size = 175    
+		size = 6400    
 	}
 
 	farmers = {
@@ -1153,7 +1153,7 @@
 	soldiers = {
 		culture = hungarian
 		religion = catholic
-		size = 1100
+		size = 3100
 	}
 
 	farmers = {

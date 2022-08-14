@@ -479,7 +479,7 @@
 	soldiers = {
 		culture = south_german
 		religion = catholic
-		size = 4550 
+		size = 6550 
 	}
 
 	farmers = {

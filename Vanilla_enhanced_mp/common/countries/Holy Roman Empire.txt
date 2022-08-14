@@ -1,4 +1,4 @@
-color = { 254 254 232 }
+color = { 234 165 41 }
 democracy = { 243  243  243 }
 graphical_culture = AustriaHungaryGC
 

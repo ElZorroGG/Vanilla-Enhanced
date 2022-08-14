@@ -99,6 +99,25 @@ polandis_gets_its_final_form
 			}
 		}
 	}
+	Polish_vilnius = {
+		potential = {
+			tag = POL
+			has_country_flag = polandis_gets_its_final_form
+			LIT = { owns = 360 }
+		}
+		
+		allow = {
+			revolution_n_counterrevolution = 1
+			owns = 938
+			LIT = { owns = 360 }
+		}
+		
+		effect = {
+			LIT = { 360 = { secede_province = POL }
+			}
+		}
+	}
+	
 	form_poland-hungary = {
 		potential = {
 			is_greater_power = yes
@@ -394,6 +413,7 @@ polandis_gets_its_final_form
 		}
 		ai_will_do = {
 			factor = 1
+			}
 		}
 	}
 }

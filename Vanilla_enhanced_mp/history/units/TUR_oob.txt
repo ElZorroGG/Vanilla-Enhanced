@@ -151,12 +151,7 @@ army = {
 army = {
 	name = "Army of the Danube"
 	location = 810
-	regiment = {
-		name= "1. Sipahis"
-		type = cuirassier
-		home = 798
-	}
-
+	
 	regiment = {
 		name= "2. Sipahis"
 		type = cuirassier

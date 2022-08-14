@@ -42,7 +42,7 @@ political_decisions = {
 				add_core = ROM
 			}
 			ROM = {
-				all_core = { 
+				any_owned = { 
 					remove_core = WAL
 					remove_core = MOL 
 				}
@@ -50,7 +50,6 @@ political_decisions = {
 			RUS = {
 				any_owned = {
 					remove_core = WAL
-					remove_core = MOL 
 				}
 			}
 			TUR = {

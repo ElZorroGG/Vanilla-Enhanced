@@ -41,13 +41,13 @@
 	soldiers = {
 		culture = czech
 		religion = catholic
-		size = 9750 
+		size = 13750 
 	}
 
 	farmers = {
 		culture = czech
 		religion = catholic
-		size = 393325
+		size = 433325
 	}
 
 	aristocrats = {
@@ -529,7 +529,7 @@
 	soldiers = {
 		culture = czech
 		religion = catholic
-		size = 3900 
+		size = 7900 
 	}
 
 	farmers = {
@@ -621,7 +621,7 @@
 	soldiers = {
 		culture = czech
 		religion = catholic
-		size = 3100 
+		size = 6900 
 	}
 
 	farmers = {

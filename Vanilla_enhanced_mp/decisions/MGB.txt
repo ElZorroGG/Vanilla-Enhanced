@@ -7,7 +7,6 @@ political_decisions = {
 				tag = MOR
 				tag = TRI
 			}
-		year = 1840
 			NOT = {
 				exists = MGB
 			}
@@ -17,21 +16,9 @@ political_decisions = {
 
         	1705 = { owned_by = THIS }
         	1708 = { owned_by = THIS }
-			TUN = {
-				all_core = {
-					OR = {
-						OR = {
-							owned_by = THIS
-							owner = {
-								in_sphere = THIS
-							}
-						}
-					}
-				}
-			}
 			MOR = {
 				all_core = {
-					OR = {
+					OR = { prov_id = 1696
 						OR = {
 							owned_by = THIS
 							owner = {
@@ -50,7 +37,8 @@ political_decisions = {
 					OR = {
 					tag = ALD
 					tag = TUN
-					tag = MOR }
+					tag = MOR
+					tag = TRI }
 					NOT = {
 						tag = THIS
 					}
@@ -70,20 +58,13 @@ political_decisions = {
 
 	form_al-andalus = {
 		potential = {
-			is_greater_power = yes
 				tag = MGB
 				exists = MGB
-
-			NOT = {
-				has_country_flag = italian_andalus
-			}
 		}	
 		allow = {
-			revolution_n_counterrevolution = 1
+			invention = national_fraternity 
 			war = no
         	1700 = { owned_by = THIS }
-        	512 = { owned_by = THIS }
-        	513 = { owned_by = THIS }
 		}
 
 		effect = {

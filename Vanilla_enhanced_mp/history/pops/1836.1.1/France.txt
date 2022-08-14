@@ -3505,7 +3505,7 @@
 		size = 200
 	}
 	aristocrats = {
-		culture = occitan
+		culture = north_italian
 		religion = catholic
 		size = 450
 	}
@@ -3516,13 +3516,13 @@
 		size = 200
 	}
 	clergymen = {
-		culture = occitan
+		culture = north_italian
 		religion = catholic
 		size = 225
 	}
 
 	artisans = {
-		culture = occitan
+		culture = north_italian
 		religion = catholic
 		size = 4000
 	}
@@ -3533,7 +3533,7 @@
 	}
 
 	soldiers = {
-		culture = occitan
+		culture = north_italian
 		religion = catholic
 		size = 600
 	}
@@ -3544,14 +3544,14 @@
 	}
 
 	farmers = {
-		culture = occitan
+		culture = north_italian
 		religion = catholic
-		size = 20000
+		size = 31000
 	}
 	farmers = {
 		culture = occitan
 		religion = catholic
-		size = 14825
+		size = 3825
 	}
 
 }

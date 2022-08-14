@@ -5,7 +5,11 @@ political_decisions = {
 			NOT = {
 				has_country_flag = tanzimat_reforms_enacted
 			}
-			government = absolute_monarchy
+            OR = {
+                government = absolute_monarchy
+                government = prussian_constitutionalism
+                government = hms_government
+            }
 		}
 		
 		allow = {
@@ -14,6 +18,8 @@ political_decisions = {
 		}
 		
 		effect = {
+            remove_country_modifier = ottoman_oppression
+            add_country_modifier = {  name = tanzimat_land_reform duration = 365 }
 			any_pop = {
 				limit = {
 					NOT = {
@@ -193,7 +199,77 @@ political_decisions = {
 			}
 			social_reform = acceptable_schools
 			add_accepted_culture = mashriqi
-			set_country_flag = tanzimat_reforms_enacted
+			set_country_flag = tanzimat_reforms_enacted_2
 		}
 	}
+	ottoman_1836_setup = {
+        picture = constantinople
+        potential = {
+            tag = TUR
+            always = no
+        }
+
+        allow = {
+            tag = TUR
+        }
+
+        effect = {
+            add_country_modifier = {
+                name = ottoman_oppression
+                duration = -1
+            }
+            enable_canal = 4
+            enable_canal = 5
+            860 = { any_pop = { literacy = 0.05 } }
+            860 = { any_pop = { limit = { has_pop_culture = turkish } literacy = 0.1 } }
+            any_pop = {
+                limit = {
+                    NOT = { has_pop_religion = sunni }
+                    OR = {
+                        has_pop_culture = north_italian
+                        has_pop_culture = ashkenazi
+                        has_pop_culture = sephardic
+                    }
+                }
+                literacy = 0.3
+            }
+
+            any_pop = { limit = { has_pop_religion = sunni is_culture_group = arab }
+                literacy = 0.01
+            }
+            any_pop = {
+                limit = { has_pop_religion = sunni is_primary_culture = no location = { continent = europe } NOT = { literacy = 0.03 } }
+                literacy = 0.02
+            }
+
+            any_pop = {
+                limit = {
+                    NOT = { has_pop_religion = sunni }
+                    OR = {
+                        has_pop_culture = serb
+                        has_pop_culture = romanian
+                        has_pop_culture = albanian
+                        has_pop_culture = georgian
+                        has_pop_culture = armenian
+                    }
+                }
+                literacy = 0.03
+            }
+
+            any_pop = { limit = { has_pop_culture = ukrainian } literacy = 0.02 }
+
+            any_pop = { limit = { has_pop_culture = greek } literacy = 0.07 }
+            any_pop = {
+                limit = {
+                    NOT = { has_pop_religion = sunni }
+                    OR = {
+                        has_pop_culture = croat
+                        has_pop_culture = bulgarian
+                    }
+                }
+                literacy = 0.15
+            }
+        }
+        ai_will_do = { factor = 1 }
+    }
 }

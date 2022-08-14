@@ -3,6 +3,35 @@
 ##################################################################################################
 
 
+ottoman_oppression = {
+    mobilisation_size = -0.02
+    land_organisation = -0.05
+    global_assimilation_rate = -0.25
+    tax_efficiency = 0.3
+    #non_accepted_pop_militancy_modifier = 0.05
+    #non_accepted_pop_consciousness_modifier = 0.1
+    icon = 5
+}
+
+
+tanzimat_land_reform = {
+    farm_rgo_eff = 0.05
+    icon = 1
+}
+
+political_instability = {
+	global_pop_militancy_modifier = 0.1
+	global_population_growth = -0.005
+	global_immigrant_attract = -4.0
+    mobilisation_size = -0.015
+	org_regain = -0.15
+    land_organisation = -0.2
+    naval_organisation = -0.2
+    factory_throughput = -0.05
+    prestige = -0.01
+	icon = 17
+}
+
 monthly_timer_2 = {
 	icon = 8
 }
@@ -24,6 +53,8 @@ badboymod = {
 
 prosperity = {
 	global_immigrant_attract = 0.5
+    land_organisation = 0.2
+    RGO_throughput = 0.2
 	icon = 13
 }
 
@@ -90,7 +121,7 @@ otto_von_bismarck = {
 	core_pop_militancy_modifier = -0.02
 	pop_consciousness_modifier = 0.02
 	diplomatic_points_modifier = 0.25
-	org_regain = 0.2
+	org_regain = 0.3
 	ruling_party_support = 0.5
 	badboy = -0.01
 	icon = 17

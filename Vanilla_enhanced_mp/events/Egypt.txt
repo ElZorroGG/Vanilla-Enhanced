@@ -1,6 +1,6 @@
 #Secede The Levant
 country_event = {
-	tag = EGY
+
 	id = 103101
 	title = "EVTNAME103101"
 	desc = "EVTDESC103101"
@@ -8,12 +8,26 @@ country_event = {
 	fire_only_once = yes
 	
 	trigger = { 
-			tag = TUR
-			894 = { controlled_by = TUR }
-			917 = { controlled_by = TUR }
-			has_global_flag = oriental_crisis
-			OR = { is_greater_power = yes
-					is_secondary_power = yes } }
+			tag = EGY
+			war_with = TUR
+			national_provinces_occupied = 0.15 
+			has_global_flag = oriental_crisis }
+
+	
+	option = {
+		name = "EVTOPTA103101"
+		TUR = { country_event = 1031010 } }
+}
+#Secede The Levant - TUR response
+country_event = {
+
+	id = 1031010
+	title = "EVTNAME103101"
+	desc = "EVTDESC103101"
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
 
 	
 	option = {
@@ -65,20 +79,47 @@ country_event = {
 	fire_only_once = yes
 	
 	trigger = { 
-			tag = TUR
-			894 = { controlled_by = TUR }
-			917 = { controlled_by = TUR }
-			1745 = { controlled_by = TUR }
-			1770 = { controlled_by = TUR }
-			has_global_flag = oriental_crisis
-			OR = { is_greater_power = yes
-					is_secondary_power = yes }
-			NOT = { has_country_flag = nosiosi }
-			exists = EGY }
+			tag = EGY	
+        OR = {
+            1745 = {
+                controller = {
+                    war_with = THIS
+                    OR = {
+                        tag = TUR
+                    }
+                }
+            }
+            NOT = {
+                any_owned_province = {
+                    is_core = TUR
+                    controlled_by = THIS
+                }
+            }
+			national_provinces_occupied = 0.30
+        }
+			has_global_flag = oriental_crisis }
 
 	option = {
 		name = "EVTOPTA103102"
-		set_global_flag = annexation_of_Egypt
+		TUR = { country_event = 1031020 }
+	}
+}
+#Anexation_of_Egypt - TUR
+country_event = {
+
+	id = 1031020
+	title = "EVTNAME103102"
+	desc = "EVTDESC103102"
+	major = yes
+	
+	fire_only_once = yes
+	
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA103102"
+		TUR = { set_country_flag = annexation_of_Egypt }
 		end_war = EGY
 		TUR = {
 			inherit = EGY

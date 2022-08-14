@@ -1,6 +1,5 @@
 owner = UBD
 controller = UBD
-add_core = RUS
 add_core = LAT
 add_core = UBD
 trade_goods = fish

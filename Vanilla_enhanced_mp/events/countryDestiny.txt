@@ -82,8 +82,11 @@ country_event = {
 	title = "EVTNAME114011"
 	desc = "EVTDESC114011"
 	
+	fire_only_nce = yes
+	
 	trigger = {
 		tag = SPA
+		ai = no
 		NOT = { 
 			has_country_flag = our_destiny
 		}
@@ -93,7 +96,6 @@ country_event = {
 	
 	option = {
 		name = "EVTOPTA114011"
-		set_country_flag = our_destiny
 		set_country_flag = historical_path
 		ai_chance = {
 			factor = 100
@@ -102,7 +104,6 @@ country_event = {
 	
 	option = {
 		name = "EVTOPTB114011"
-		set_country_flag = our_destiny
 		set_country_flag = european_expansion
 		ai_chance = {
 			factor = 0
@@ -110,7 +111,6 @@ country_event = {
 	}
 	option = {
 		name = "EVTOPTC114011"
-		set_country_flag = our_destiny
 		set_country_flag = regain_our_colonies
 		ai_chance = {
 			factor = 0

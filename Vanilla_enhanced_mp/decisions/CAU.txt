@@ -1,0 +1,84 @@
+political_decisions = {
+	form_caucasus = {
+		picture = cuacasus
+		potential = {
+			OR = {
+				tag = GEO
+				tag = ARM
+				tag = AZB
+			}
+			NOT = {
+				exists = BNX
+			}
+		}
+		allow = {
+			nationalism_n_imperialism = 1
+			war = no
+			GEO = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			ARM = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+			AZB = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 15
+			any_country = {
+				limit = {
+					OR = {
+						tag = AZB
+						tag = ARM
+						tag = GEO
+ 
+					}
+					in_sphere = THIS
+					NOT = {
+						tag = THIS
+					}
+				}
+				annex_to = THIS
+			}
+			AZB = { all_core = { add_core = CAU } }	
+			ARM = { all_core = { add_core = CAU } }	
+			GEO = { all_core = { add_core = CAU } }				
+			change_tag = CAU
+			add_accepted_culture = armenian
+			add_accepted_culture = azerbaijani
+			add_accepted_culture = georgian
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

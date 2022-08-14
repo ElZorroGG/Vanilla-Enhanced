@@ -722,6 +722,7 @@ political_decisions = {
 		effect = {
 			set_country_flag = italian_conquest_of_greece
 			GRE = { all_core = { add_core = ITA } }
+			add_accepted_culture = greek
 			prestige = 5
 		}
 	}

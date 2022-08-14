@@ -99,6 +99,8 @@ bulgaria_will_be_completed
 			BUL = { all_core = { add_core = BRO } }
 			ROM = { all_core = { add_core = BRO } }	
 			change_tag = BRO
+			add_accepted_culture = bulgarian
+			add_accepted_culture = romanian
 		}
 		ai_will_do = {
 			factor = 1

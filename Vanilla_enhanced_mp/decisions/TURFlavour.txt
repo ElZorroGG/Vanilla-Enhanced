@@ -1,9 +1,9 @@
 #Venga el gran imperio
 political_decisions = {
-   The_great_comeback = {
+    Control_over_north_africa = {
         potential = {
 		    tag = TUR
-			has_country_flag = The_Ottoman_Empire_annexes_Egypt
+			has_country_flag = annexation_of_Egypt
 			TUR = {
 			    owns = 1747
 				owns = 1761
@@ -15,12 +15,9 @@ political_decisions = {
 
 		allow = {
 		    TUR = {
-			    owns = 1708
-				owns = 1725
-				owns = 1701
-				owns = 1707
+				owns = 1748
+				owns = 1759
 				}
-			is_greater_power = yes
 		}
 		
 		effect = { 
@@ -38,13 +35,13 @@ political_decisions = {
 			FRA_1700 = { add_core = TUR }
 			ALD_1708 = { add_core = TUR }#argelia
 			TRI_1743 = { add_core = TUR }#tripoli
-			EGY_1754 = { add_core = TUR }#egyp
+			EGY_1754 = { add_core = TUR }#egypt
 			EGY_1753 = { add_core = TUR }
 			EGY_1758 = { add_core = TUR }
 			EGY_1762 = { add_core = TUR }
 			EGY_1755 = { add_core = TUR }
 			EGY_1771 = { add_core = TUR }
-			prestige = 1
+			prestige = 10
 			badboy = -5
 		}
     }
@@ -59,19 +56,21 @@ political_decisions = {
         }
 		
         allow = {
-		    SER = { 
+		AND = {
+		    OR = { SER = { 
 			in_sphere = TUR
 			}
-			MON = { 
+			owns = 794 }
+		    OR = { MON = { 
 			in_sphere = TUR 
 			}
-            TUR = {
-			    owns = 826
-				owns = 834
-				owns = 836
-				owns = 827
+			owns = 2583 }
+		    OR = {
+            GRE = {
+			in_sphere = TUR 
 			}
-        is_greater_power = yes
+			owns = 834 }
+        is_greater_power = yes }
 		}
 		
 		effect = { 
@@ -81,9 +80,16 @@ political_decisions = {
 		HUN = { all_core = { add_core = TUR } }
 		SER = { all_core = { add_core = TUR } }
 		MON = { all_core = { add_core = TUR } }
+		ROM = { all_core = { add_core = TUR } }
+		TUR = { all_core = { add_core = OTO } }
+		OTO = { all_core = { remove_core = TUR } }
+			change_tag = OTO
 
 		inherit = SER
 		inherit = MON
+		inherit = GRE
+		inherit = WAL
+		inherit = MOL
 		prestige = 11
 		badboy = -5
 		}
@@ -91,7 +97,7 @@ political_decisions = {
 #El Mar negro es otomano
     to_the_black_sea = {
 	    potential = { 
-		    tag = TUR 
+		    tag = OTO 
 			has_country_flag = por_el_imperio
             NOT = { 
                 has_country_flag = ganamos_el_mar_negro
@@ -114,15 +120,12 @@ political_decisions = {
 		    set_country_flag = ganamos_el_mar_negro
 			prestige = 11
 			badboy = -5
-			TUR = { all_core = { add_core = OTO } }
-			all_core = { remove_core = TUR }
-			change_tag = OTO
 		}
 	}
 #El caucaso es otomano
     the_caucasus_was_always_ours = {
 	    potential = {
-	        tag = TUR 
+	        tag = OTO 
 		    has_country_flag = por_el_imperio
 		    NOT = { 
                 has_country_flag = ganamos_el_mar_negro
@@ -142,9 +145,6 @@ political_decisions = {
 			RUS_1098  = { add_core = TUR }
 			prestige = 11
 			badboy = -5
-			TUR = { all_core = { add_core = OTO } }
-			all_core = { remove_core = TUR }
-			change_tag = OTO
 		}
 	}
 	Rename_Constantinople = {
@@ -207,6 +207,7 @@ political_decisions = {
 			GLO = { all_core = { add_core = KUK } }
 			CRO = { all_core = { add_core = KUK } }
 			KRA = { all_core = { add_core = KUK } }
+			BOH = { all_core = { add_core = KUK } }
 		    	SER = { all_core = { remove_core = AUS } }
 		    	CRO = { all_core = { remove_core = AUS } }
 		    	BOS = { all_core = { remove_core = AUS } }

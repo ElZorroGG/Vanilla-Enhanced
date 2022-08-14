@@ -99,7 +99,7 @@
 	soldiers = {
 		culture = croat
 		religion = catholic
-		size = 1100
+		size = 3800
 	}
 
 	farmers = {

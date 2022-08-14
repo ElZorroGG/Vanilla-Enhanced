@@ -291,3 +291,55 @@ country_event = {
 		}
 	}
 }
+# Event to Inherit-Germany
+country_event = {
+	id = 111011
+	title = "EVTNAME111010"
+	desc = "EVTDESC111010"
+	picture = "Celebration"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA111010"
+		remove_core = PRU
+		remove_core = SAX
+		remove_core = COB
+		remove_core = MEI
+		remove_core = WEI
+		remove_core = LUB
+		remove_core = MEC
+		remove_core = ANH
+		remove_core = HOL
+		remove_core = HAM
+		remove_core = BRA
+		remove_core = HAN
+		remove_core = HEK
+		remove_core = NAS
+		remove_core = LIP
+		remove_core = BAD
+		remove_core = BAV
+		remove_core = WUR
+		remove_core = OLD
+		remove_core = BRE
+		FROM = {
+			inherit = THIS
+		}
+		ai_chance = {
+			factor = 25
+		}
+	}
+
+	option = {
+		name = "EVTOPTB111010"
+		prestige = 1
+		relation = {
+			who = FROM
+			value = -100
+		}
+		any_pop = {
+			militancy = 3
+			consciousness = 2
+		}
+	}
+}

@@ -1984,3 +1984,50 @@ country_event = {
 			}
 	}
 }
+country_event = {
+	id = 118005 #Germany gets the proposal
+	title = "EVTNAME118005"
+	desc = "EVTDESC118005"
+	picture = "expansion"
+
+
+    is_triggered_only = yes
+
+	option = {
+		name = "We don't accept"
+		badboy = 3
+	}
+	option = {
+		name = "We accept"
+			relation = {
+				who = ENG
+				value = 50
+			}
+		        2200 = { secede_province = FROM }
+		        2196 = { secede_province = FROM }
+		badboy = -3
+	}
+}
+country_event = {
+	id = 118006 #Germany gets the proposal
+	title = "EVTNAME118006"
+	desc = "EVTDESC118006"
+	picture = "expansion"
+
+
+    is_triggered_only = yes
+
+	option = {
+		name = "We don't accept"
+		badboy = 3
+	}
+	option = {
+		name = "We accept"
+			relation = {
+				who = HON
+				value = 50
+			}
+		        2196 = { secede_province = FROM }
+		badboy = -3
+	}
+}

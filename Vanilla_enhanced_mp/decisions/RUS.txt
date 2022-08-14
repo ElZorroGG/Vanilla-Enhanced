@@ -642,6 +642,7 @@ political_decisions = {
 		}
 		effect = {
 			inherit = CAU
+			CAU = { all_core = { add_core = RUS } }
             any_pop = {
                 limit = {
                     OR = {
@@ -674,6 +675,7 @@ political_decisions = {
 			UBD = { remove_accepted_culture = latvian }
             UBD = { primary_culture = latvian }
 			inherit = UBD
+			UBD = { all_core = { add_core = RUS } }
             any_pop = {
                 limit = {
                     OR = {

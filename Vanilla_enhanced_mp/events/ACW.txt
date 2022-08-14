@@ -2574,7 +2574,6 @@ country_event = {
 			93 = { secede_province = USA }
 			80 = { secede_province = USA }
 			79 = { secede_province = USA }
-	war_exhaustion = 60
     }
 }
 #Independence of Liberia

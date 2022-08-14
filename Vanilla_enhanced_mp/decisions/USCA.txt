@@ -44,5 +44,40 @@ political_decisions = {
 			factor = 1
 		}
 	}
-}	
+	
+	Zeledon-Wyke_treaty = {
+		potential = {
+			owns = 2197
+			year = 1860
+			NOT = { owns = 2200 }
+		} 
 
+		allow = {
+			war = no
+		}
+
+		effect = {
+			any_country = { limit = { owns = 2200 } country_event = 118005 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+#Lagos intervention
+	Honduran_border_dispute = {
+		potential = {
+			tag = HON
+			owns = 2195
+			NOT = { owns = 2196 } NOT = { ENG = { owns = 2196 } }
+		}
+		allow = { 
+		}
+
+		effect = {
+			badboy = -0.5
+			any_country = { limit = { owns = 2196 } country_event = 118006 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}

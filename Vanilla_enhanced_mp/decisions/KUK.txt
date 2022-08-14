@@ -86,8 +86,6 @@ political_decisions = {
 		
 		allow = {
 			revolution_n_counterrevolution = 1
-			OR = { government = democracy 
-			government = hms_government }
 			ruling_party_ideology = liberal 
 			war = no 
 		}
@@ -139,7 +137,7 @@ political_decisions = {
 	}
 	Accept_Serbs = {
 		potential = {
-			tag = AUS 
+			tag = KUK 
 				NOT = { has_country_flag = accept_minority_ser }
 				owns = 794
 				owns = 798

@@ -254,7 +254,7 @@ political_decisions = {
 	intervene_in_lagos = {
 		picture = map_africa
 		potential = {
-#			tag = ENG
+			THIS = { capital_scope = { continent = europe }}
 			1923 = {
 				OR = {
 					empty = yes
@@ -314,7 +314,6 @@ political_decisions = {
 	bardo_treaty = {
 		picture = desertcol
 		potential = {
-			tag = FRA
 			is_greater_power = yes
 			nationalism_n_imperialism = 1
 			TUN = { 

@@ -1,0 +1,42 @@
+political_decisions = {
+	form_serbia_n_montenegro = {
+		picture = serbianmontenegro
+		potential = {
+				tag = SER
+			neighbour = MON
+			NOT = {
+				exists = SMO
+			}
+		}
+		allow = {
+			war = no
+			neighbour = MON
+			MON = { ai = yes }
+		}
+		
+		effect = {
+			prestige = 15
+			any_country = {
+				limit = {
+					OR = {
+						tag = MON
+						tag = SER 
+					}
+					NOT = {
+						tag = THIS
+					}
+				}
+				annex_to = THIS
+			}
+			794 = {
+				change_province_name = "Tilingrado"
+			}
+			SER = { all_core = { add_core = SMO } }	
+			MON = { all_core = { add_core = SMO } }	
+			change_tag = SMO
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

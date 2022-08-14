@@ -528,7 +528,8 @@ country_event = {
 		tag = AUS
 		has_country_flag = hungarian_revolution_has_happened
 		NOT = {
-			has_global_flag = hungary_wants_independence
+			has_country_flag = hungary_wants_independence
+			has_country_flag = hungarian_language_is_respected
 		}
 	}
  
@@ -543,7 +544,7 @@ country_event = {
 		AUS = {
 			capital = 619
 		}
-		set_global_flag = hungary_wants_independence
+		set_country_flag = hungary_wants_independence
 		war = {
 			target = HUN
 			attacker_goal = {

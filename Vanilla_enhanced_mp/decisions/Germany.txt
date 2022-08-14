@@ -682,8 +682,8 @@ claim_togo = {
 	Drang_nach_Osten = {
 		potential = {
 		OR = {
-			tag = GER
-			tag = NGF }
+			tag = NGF
+			tag = PRU }
 		UBD = { exists = yes 
 				primary_culture = north_german }
 			NOT = { has_country_flag = Septemberprogramm2 }
@@ -700,6 +700,31 @@ claim_togo = {
 			inherit = UBD
 			UBD = { all_core = { add_core = THIS } }
 			LIT = { all_core = { limit = { NOT = { province_id = 938 province_id = 947 } } add_core = THIS } }
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	the_bohemian_question = {
+		potential = {
+			tag = GER 
+			owns = 625 
+		BOH = { all_core = { owned_by = THIS } }
+		}
+
+		allow = {
+		BOH = { all_core = { owned_by = THIS } }
+		}
+
+		effect = {
+			set_country_flag = Septemberprogramm2
+			badboy = -5
+			625 = { secede_province = BOH }
+			631 = { secede_province = BOH }
+			626 = { secede_province = BOH }
+			create_vassal = BOH
 		}
 
 		ai_will_do = {

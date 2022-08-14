@@ -848,7 +848,6 @@ political_decisions = {
 		potential = { 
 			tag = USA
 			NOT = { accepted_culture = anglo_canadian }
-			owns = 68
 			owns = 13
 			owns = 84
 			owns = 102
@@ -858,6 +857,7 @@ political_decisions = {
 		}
 		allow = { 
 			war_policy = jingoism 
+			owns = 13
 			all_core = { OR = { owned_by = THIS empty = yes} }
 			OR = { 	
 				NOT = { 
