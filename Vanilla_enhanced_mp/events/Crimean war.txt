@@ -1,0 +1,410 @@
+country_event = {
+    id = 97500
+    title = "EVTNAME97500" #Sovereign Authority in the Holy Land
+    desc = "EVTDESC97500"
+    picture = "french_on_crimean_war"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVT97500OPTA"
+        prestige = 10
+        RUS = {
+            prestige = 10
+            relation = { who = FRA value = -50 }
+        }
+        FRA = { country_event = { id = 97501 days = 10 } }
+        ai_chance = {
+            factor = 80
+            modifier = {
+                factor = 0
+                in_sphere = FRA
+            }
+            modifier = {
+                factor = 0.5
+                truce_with = RUS
+            }
+            modifier = {
+                factor = 0.5
+                is_secondary_power = no
+            }
+        }
+    }
+
+    option = {
+        name = "EVT97500OPTB"
+        set_global_flag = france_protector_of_eastern_christians
+        prestige = -10
+        FRA = { country_event = { id = 97504 days = 10 } } 
+        RUS = { country_event = 97503 }
+        create_alliance = ENG 
+		create_alliance = FRA
+        ai_chance = {
+            factor = 20
+            modifier = {
+                factor = 0
+                in_sphere = RUS
+            }
+            modifier = {
+                factor = 0.5
+                part_of_sphere = yes
+                NOT = { in_sphere = RUS }
+                NOT = { in_sphere = FRA }
+            }
+            modifier = {
+                factor = 2
+                is_secondary_power = no
+            }
+        }
+    }
+}
+
+country_event = {
+    id = 97501
+    title = "EVTNAME97501" #Turks Refuse Our Claim
+    desc = "EVTDESC97501"
+    picture = "ottoman"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVT97501OPTA"
+        TUR = { country_event = { id = 97502 days = 10 } }
+        relation = { who = RUS value = -100 }
+        leave_alliance = RUS
+        ai_chance = {
+            factor = 95
+        }
+    }
+
+    option = {
+        name = "EVT97501OPTB"
+        prestige = -50
+        relation = { who = TUR value = -50 }
+        ai_chance = {
+            factor = 5
+        }
+    }
+}
+
+country_event = {
+    id = 97502
+    title = "EVTNAME97502" #French Escalation
+    desc = "EVTDESC97502"
+    picture = "crimean_war_ships"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVT97502OPTA"
+        set_global_flag = france_protector_of_eastern_christians
+        prestige = -20
+        create_alliance = FRA
+        FRA = { country_event = { id = 97504 days = 10 } }
+        RUS = { country_event = 97503 }
+        create_alliance = ENG 
+		create_alliance = FRA
+        ai_chance = {
+            factor = 90
+            modifier = {
+                factor = 0.5
+                in_sphere = RUS
+            }
+        }
+    }
+
+    option = {
+        name = "EVT97502OPTB"
+        set_country_flag = refused_french_claim
+        prestige = 5
+        relation = { who = RUS value = 50 }
+        FRA = {
+            diplomatic_influence = { who = TUR value = -100 }
+            relation = { who = TUR value = -200 }
+            leave_alliance = TUR
+            casus_belli = {
+                target = TUR
+                type = cut_down_to_size
+                months = 24
+            }
+			war = {
+                target = TUR
+			attacker_goal = {
+				casus_belli = cut_down_to_size
+			} 
+            }
+        }
+        ai_chance = {
+            factor = 10
+            modifier = {
+                factor = 5
+                in_sphere = RUS
+            }
+            modifier = {
+                factor = 0
+                part_of_sphere = no
+            }
+            modifier = {
+                factor = 0.5
+                is_secondary_power = no
+            }
+        }
+    }
+}
+
+country_event = {
+    id = 97503
+    title = "EVTNAME97500" #Russian Response
+    desc = "EVTDESC97503"
+    news = yes
+    news_desc_long = "EVTDESC97503_NEWS_LONG"
+    news_desc_medium = "EVTDESC97503_NEWS_MEDIUM"
+    news_desc_short = "EVTDESC97503_NEWS_SHORT"
+    picture = "russian_claims_on_holy_land"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVT97503OPTA"
+        diplomatic_influence = { who = TUR value = -400 }
+        relation = { who = TUR value = -400 }
+    }
+}
+
+country_event = {
+    id = 97504
+    title = "EVTNAME97504" #Ottomans Have Agreed
+    desc = "EVTDESC97504"
+    picture = "ottoman"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVT97504OPTA"
+        prestige = 20
+        random_country = {
+            limit = {
+                is_sphere_leader_of = TUR
+                NOT = { tag = FRA }
+                NOT = { tag = RUS }
+            }
+            diplomatic_influence = { who = TUR value = -100 }
+            relation = { who = FRA value = -25 }
+        }
+        diplomatic_influence = { who = TUR value = 100 }
+        relation = { who = TUR value = 300 }
+        create_alliance = TUR
+		add_country_modifier = {
+				name = protector_of_eastern_christendom
+				duration = -1
+		ENG = { 
+        create_alliance = TUR }
+		RUS = { country_event = 97506 }
+    }
+}
+
+country_event = {
+    id = 97505
+    title = "EVTNAME97505" #French Authority in the Holy Land
+    desc = "EVTDESC97505"
+    picture = "french_on_crimean_war"
+
+    trigger = {
+        tag = TUR
+        has_country_flag = refused_french_claim
+        NOT = { has_global_flag = france_protector_of_eastern_christians }
+        war = no
+        owns = 917
+        OR = {
+            AND = {
+                in_sphere = FRA
+                ai = yes
+            }
+            AND = {
+                truce_with = FRA
+                is_disarmed = yes
+            }
+        }
+    }
+
+    mean_time_to_happen = {
+        days = 10
+    }
+
+    immediate = {
+        clr_country_flag = refused_french_claim
+    }
+
+    option = {
+        name = "EVT97505OPTA"
+        set_global_flag = france_protector_of_eastern_christians
+        prestige = -10
+        FRA = { country_event = 97504 }
+        RUS = { country_event = 97503 }
+        create_alliance = ENG 
+		create_alliance = FRA
+    }
+}
+country_event = {
+    id = 97506
+    title = "EVTNAME97506" #Russian declaration of war
+    desc = "EVTDESC97506"
+    picture = "crimean_war_ships"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVT97506OPTA"
+        relation = { who = TUR value = -400 }
+        prestige = -20
+        
+    }
+
+    option = {
+        name = "EVT97506OPTB"
+        set_country_flag = crimean_war
+        prestige = 5
+        relation = { who = RUS value = 50 }
+            casus_belli = {
+                target = TUR
+                type = crimean_war_russia
+                months = 24
+            }
+        FRA = {
+            casus_belli = {
+                target = RUS
+                type = crimean_war_france
+                months = 24
+            } }
+			war = {
+                target = TUR
+			attacker_goal = {
+				casus_belli = crimean_war_russia
+			} 
+			
+			defender_goal = {
+				casus_belli = crimean_war_france
+			} 
+        }
+        ai_chance = {
+            factor = 100
+        }
+    }
+}
+#Russia wins#
+country_event = {
+	id = 97507
+	title = "EVTNAME97507"
+	desc = "EVTDESC97507"
+	picture = "constantinople_conference"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA100008"
+		RUS = { set_country_flag = treaty_of_paris_russia }
+		release_vassal = ROM
+		any_owned = {
+			limit = {
+					owned_by = TUR }
+			BUL = { all_core = { secede_province = BUL
+						remove_core = TUR } }
+			858 = { secede_province = BUL  }
+			859 = { secede_province = BUL  }
+			828 = { secede_province = BUL }
+			807 = { secede_province = BUL  }
+			806 = { secede_province = BUL  }
+			675 = { secede_province = BUL  }
+			805 = { secede_province = BUL  }
+			BOS = { all_core = { secede_province = BOS
+						remove_core = TUR } }
+			KUR = { all_core = { secede_province = KUR
+						remove_core = TUR } }
+			ARM = { all_core = { secede_province = ARM
+						remove_core = TUR } }
+			917 = { secede_province = RUS
+						remove_core = TUR }
+			918 = { secede_province = RUS
+						remove_core = TUR }
+			916 = { secede_province = RUS
+						remove_core = TUR }
+			919 = { secede_province = RUS
+						remove_core = TUR }
+			920 = { secede_province = RUS
+						remove_core = TUR }
+			921 = { secede_province = RUS
+						remove_core = TUR }
+			BUL = { capital = 809 }
+
+			ALB = { all_core = { secede_province = ALB
+						remove_core = TUR } }
+			ALB = { capital = 849 }
+			SER = { all_core = { secede_province = SER
+						remove_core = TUR } }
+			MON = { all_core = { secede_province = MON
+						remove_core = TUR } }
+			GRE = { all_core = { secede_province = GRE
+						remove_core = TUR } } }
+			MOL = { all_core = { remove_core = RUS } }
+			RUS = { create_vassal = BUL
+			create_vassal = ROM }
+			860 = { secede_province = RUS  }
+			861 = { secede_province = RUS  }
+			BUL = { set_country_flag = search_for_independence }
+			
+		AUS = {
+		diplomatic_influence = {
+			who = BOS
+			value = 400
+				}
+			}
+		KUK = {
+		diplomatic_influence = {
+			who = BOS
+			value = 400 }
+				}
+			RUS = { add_country_modifier = {
+				name = protector_of_eastern_christendom
+				duration = -1
+			}
+			FRA = { remove_country_modifier = protector_of_eastern_christendom }
+		ai_chance = {
+			factor = 100 } }
+	}
+}
+
+#france wins#
+country_event = {
+	id = 97508
+	title = "EVTNAME97508"
+	desc = "EVTDESC97508"
+	picture = "constantinople_conference"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA97508"
+		FRA = { set_country_flag = treaty_of_paris }
+		
+		diplomatic_influence = {
+			who = ROM
+			value = -400 }
+		
+		AUS = { diplomatic_influence = {
+			who = ROM
+			value = 300 }
+			
+		TUR = { diplomatic_influence = {
+			who = ROM
+			value = -400 }		}
+			
+		diplomatic_influence = {
+			who = SER
+			value = -400 }
+		676 = { secede_province = ROM }
+		2701 = { secede_province = ROM }
+
+		ai_chance = {
+			factor = 100 }
+	}
+}

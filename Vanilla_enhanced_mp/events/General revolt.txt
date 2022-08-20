@@ -1,0 +1,284 @@
+#bulgarian revolution
+country_event = {
+
+	id = 119000
+	title = "Bulgarian request"
+	desc = "With their declaration of independence, they now are approching us to support our independence and fight the unstable yet great Russia"
+	picture = "hungarian_revolution"
+	
+	is_triggered_only = yes
+
+	
+	option = {
+		name = "EVTOPTA119000" #They take part in the revolt
+		RUS = { release_vassal = ROM 
+		country_event = 119001 days = 15 } 
+		ai_chance = {
+			factor = 100 }
+	}
+	
+	option = {
+		name = "EVTOPTB102800" #They don't take part in the revolt
+		RUS = { country_event = 119002 days = 15 } }
+}
+
+#Russian response
+country_event = {
+
+	id = 119001
+	title = "Balkan independence"
+	desc = "After some decades under our control, Bulgaria and Romania seek to reafirm their sovereignty as absolutely independent states"
+	picture = "revolutionnn"
+	mayor = yes
+	
+	is_triggered_only = yes
+
+	
+	option = {
+		name = "EVTOPTA102900"
+		any_pop = {
+			consciousness = 2
+			militancy = 2
+		}
+        casus_belli = {
+                target = BUL
+                type = make_puppet
+                months = 24
+        }
+		war = {
+			target = BUL
+			attacker_goal = {
+				casus_belli = make_puppet
+			}
+			
+			defender_goal = {
+				casus_belli = status_quo
+			}
+		}        
+		casus_belli = {
+                target = ROM
+                type = make_puppet
+                months = 24
+        }
+		war = {
+			target = ROM
+			attacker_goal = {
+				casus_belli = make_puppet
+			}
+			
+			defender_goal = {
+				casus_belli = status_quo
+			}
+		}
+		set_country_flag = general_revolt
+		ai_chance = {
+			factor = 100 }
+	}
+	
+	option = {
+		name = "EVTOPTB102900"
+		pretige = -20
+		set_country_flag = general_revolt
+	}
+}
+#Bulgarian_independence
+country_event = {
+
+	id = 119002
+	title = "Bulgarian independence"
+	desc = "After some decades under our control, Bulgaria seeks to reafirm its sovereignty as an absolutely independent state"
+	picture = "revolutionnn"
+	mayor = yes
+	
+	is_triggered_only = yes
+
+	
+	option = {
+		name = "EVTOPTA102900"
+		any_pop = {
+			consciousness = 2
+			militancy = 2
+		}
+        casus_belli = {
+                target = BUL
+                type = make_puppet
+                months = 24
+        }
+		war = {
+			target = BUL
+			attacker_goal = {
+				casus_belli = make_puppet
+			}
+			
+			defender_goal = {
+				casus_belli = status_quo
+			}
+		}
+		set_country_flag = general_revolt
+		ai_chance = {
+			factor = 100 }
+	}
+	
+	option = {
+		name = "EVTOPTB102900"
+		pretige = -20
+		set_country_flag = general_revolt
+	}
+}
+#General revolt
+country_event = {
+
+	id = 119003
+	title = "General revolt"
+	desc = "With all the ethnic problems that the country now has, it is now impossible to stop the wave of nationalism we brought to ourselves."
+	picture = "revolutionnn"
+	
+	trigger = { tag = RUS
+	has_country_flag = general_revolt }
+
+    option = {
+        name = "EVTOPTA96031" #Great
+		clr_country_flag = general_revolt
+		release_vassal = FIN
+        any_country = {
+            limit = {
+                OR = {
+                    civilized = yes
+                    tag = JAP
+                }
+                any_core = { owned_by = THIS }
+                exists = no
+                OR = {
+                    is_cultural_union = no
+                    tag = ROM
+                }
+                NOT = {
+                    AND = {
+                        is_primary_culture = THIS
+                        culture_has_union_tag = yes
+                    }
+                }
+                NOT = { has_country_flag = post_colonial_country }
+            }
+            all_core = {
+                limit = {
+                    is_core = THIS
+                    state_scope = {
+                        NOT = { any_owned_province = { is_capital = yes } }
+                    }
+                }
+            }
+            country_event = 960120
+        }
+		ai_chance = {
+			factor = 100 }
+	} 
+}
+
+country_event = {
+
+    id = 960120
+    title = "EVTNAME96012"
+    desc = "EVTDESC96012"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVTOPTA96031" #Great
+        FROM = {
+            any_state = {
+                limit = {
+                    any_owned_province = { is_core = THIS }
+                    NOT = { any_owned_province = { is_capital = yes } }
+                }
+                any_owned = {
+                    limit = { is_core = THIS }
+                    secede_province = THIS
+                }
+            }
+        }
+        random_owned = {
+            limit = {
+                owner = { num_of_cities = 20 }
+            }
+            owner = {
+                any_neighbor_country = {
+                    limit = {
+                        any_core = { owned_by = THIS }
+                        NOT = { tag = FROM }
+                        NOT = { alliance_with = FROM }
+                    }
+                    country_event = 96022
+                }
+            }
+            any_country = {
+                limit = {
+                    exists = no
+                    is_cultural_union = no
+                    NOT = { is_culture_group = FROM }
+                    NOT = {
+                        THIS = { is_cultural_union = yes }
+                        is_culture_group = THIS
+                    }
+                    any_core = { owned_by = THIS }
+                }
+                country_event = 96012
+            }
+        }
+        any_country = {
+            limit = {
+                OR = {
+                    truce_with = FROM
+                    AND = {
+                        has_country_flag = coalition_member
+                    }
+                }
+                is_greater_power = yes
+            }
+            diplomatic_influence = {
+                who = THIS
+                value = 100
+            }
+            relation = {
+                who = THIS
+                value = 100
+            }
+        }
+        any_country = {
+            limit = {
+                OR = {
+                    truce_with = FROM
+                    AND = {
+                        has_country_flag = coalition_member
+                    }
+                }
+                is_greater_power = no
+            }
+            relation = {
+                who = THIS
+                value = 100
+            }
+        }
+        FROM = {
+            diplomatic_influence = {
+                who = THIS
+                value = -200
+            }
+            relation = {
+                who = THIS
+                value = -100
+            }
+        }
+		RUS = { casus_belli = {
+                target = THIS
+                type = conquest
+                months = 24
+            } }
+		RUS = { 	war = {
+                target = THIS
+			attacker_goal = {
+				casus_belli = conquest
+			} }
+		}
+    }
+}
