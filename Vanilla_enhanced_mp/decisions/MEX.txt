@@ -4,17 +4,21 @@ political_decisions = {
 			tag = USA
 			has_country_flag = hasmanifestdestiny
 			NOT = { has_country_flag = treaty_of_guadalupe_hidalgo }
-			MEX = { is_greater_power = no }
+			MEX = { is_greater_power = no NOT = { has_country_flag = refute_manifest_destiny }}
 		}
 
 		allow = {
 			exists = MEX
-			OR = { AND = { 
+			OR = { 
+                2172 = { controlled_by = USA }
+				AND = { 
 				war_score = 70
 				war_with = MEX }
-				AND = { 
-				MEX = { war_exhaustion = 70 }
-				war_with = MEX }
+                AND = {
+                    is_sphere_leader_of = MEX
+                    war = no
+                    truce_with = MEX
+                }
 				MEX = {
 					all_core = {
 						OR = {
@@ -40,6 +44,7 @@ political_decisions = {
 		potential = {
 			tag = USA
 			has_country_flag = hasmanifestdestiny
+			has_country_flag = treaty_of_guadalupe_hidalgo
 			NOT = { has_country_flag = la_mesilla }
 			MEX = { is_greater_power = no }
 		}
