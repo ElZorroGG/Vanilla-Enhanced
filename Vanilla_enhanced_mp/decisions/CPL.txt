@@ -31,14 +31,17 @@ political_decisions = {
         }
 
         allow = {
-		OR = { 
-		PRU = { has_country_modifier = { springtime_of_nations } }
-		year = 1850 }
+		year = 1848
         }
 
         effect = {
-		set_country_flag = posen_free
-		PRU = { limit = { our_vassal = THIS } country_event = 1130110 }
+		set_country_flag = posen_free	
+		any_country = {
+			limit = {
+				has_country_flag = POS_Lord
+			}
+			country_event = { id = 1130110 days = 5 }
+		}
         }
     }
 
