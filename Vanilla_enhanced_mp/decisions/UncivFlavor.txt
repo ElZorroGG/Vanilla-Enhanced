@@ -404,7 +404,9 @@ political_decisions = {
 		potential = {
 			OR = { tag = BEN
 			tag = WRI
-			tag = OYO }
+			tag = OYO
+			tag = CLA
+			tag = ARO }
 			NOT = { has_country_flag = isokan }
 		}
 		allow = {
@@ -423,11 +425,8 @@ political_decisions = {
 			OYO = { all_core = { add_core = THIS } }
 			DAH = { all_core = { add_core = THIS } } 
 			SOK = { all_core = { add_core = THIS } }  
-			1930 = { secede_province = THIS add_core = THIS } 
-			1933 = { secede_province = THIS add_core = THIS } 
-			1934 = { secede_province = THIS add_core = THIS } 
-			1935 = { secede_province = THIS add_core = THIS } 
-			1936 = { secede_province = THIS add_core = THIS } 
+			ARO = { all_core = { add_core = THIS } }  
+			CLA = { all_core = { add_core = THIS } }  
 			years_of_research = 5
 		}
 		ai_will_do = {
@@ -452,4 +451,60 @@ political_decisions = {
 			factor = 1
 		}
 	}	
+	
+	Bowring_treaty = {
+		potential = {
+			tag = SIA
+			NOT = { has_country_flag = westtech }
+		}
+		allow = {
+		year = 1855
+		}
+		effect = {
+			1344 = { secede_province = ENG }
+			set_country_flag = westtech
+			years_of_research = 5
+			finance_reform = yes_finance_reform
+		}
+	}
+	
+	Rama_IV = {
+		potential = {
+			tag = SIA
+			NOT = { has_country_flag = rama }
+		}
+		allow = {
+		year = 1853
+		}
+		effect = {
+			set_country_flag = rama
+			add_country_modifier = {
+				name = reformation_spirit_of_rama_IV
+				duration = -1
+			}
+		}
+	}
+	
+	champassak_integration_act = {
+        picture = form_laos
+        potential = {
+            tag = SIA
+            LUA = { exists = yes vassal_of = SIA }
+            NOT = {
+                has_country_flag = champassak_integrated
+            }
+        }
+        allow = {
+            war = no
+            civilized = yes
+            is_our_vassal = LUA
+            LUA = { OR = { NOT = { part_of_sphere = yes } in_sphere = THIS } }
+        }
+
+        effect = {
+            badboy = 1
+            inherit = LUA
+            set_country_flag = champassak_integrated
+        }
+    }
 }

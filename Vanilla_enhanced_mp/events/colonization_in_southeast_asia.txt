@@ -181,12 +181,83 @@ country_event = {
 		1363 = {
 			secede_province = FROM
 		}
+		1356 = {
+			secede_province = FROM
+		}
+		1362 = {
+			secede_province = FROM
+		}
 		1366 = {
 			secede_province = FROM
 		}
 		ai_chance = {
 			factor = 90
 		}
+	}
+
+	option = {
+		name = "EVTOPTA110001"
+		add_casus_belli = {
+				target = FROM
+				type = demand_concession_casus_belli
+				months = 100
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+#malaysian lands in Siam
+country_event = {
+
+	id = 1100040
+	title = "Rightful Malaysian lands"
+	desc = "owning Malaysia, we have a convinceable demand for our Siamese neighbours: give us more land."
+	picture = "french_saigon"
+
+	fire_only_once = yes
+	
+	trigger = {
+		OR = { is_greater_power = yes
+		is_secondary_power = yes }
+		nationalism_n_imperialism = 1
+		owns = 1387
+		invention = sociology
+	}
+
+	
+	option = {
+		name = "yes."
+		SIA = {
+			country_event = { id=1100050 days = 4 }
+		}
+	}
+}
+#Secede or war
+country_event = {
+
+	id = 1100050
+	title = "Malaysian lands"
+	desc = "With another power in the south of our country, ready to take more of our empire, we can turn to our apeasement policies or this time not let them carve us up."
+	
+	is_triggered_only = yes
+
+	
+	option = {
+		name = "EVTOPTA110005"
+		any_pop = {
+			consciousness = 2
+		}
+		1391 = {
+			secede_province = FROM
+		}
+		1389 = {
+			secede_province = FROM
+		}
+		ai_chance = {
+			factor = 90
+		}
+		SIA = { years_of_research = 2 }
 	}
 
 	option = {

@@ -3,13 +3,13 @@ political_decisions = {
         picture = poland
         potential = {
                 tag = CPL
-		nationalism_n_imperialism = 1
         }
 
         allow = {
 		war = no
 		owns = 706
 		owns = 715
+		nationalism_n_imperialism = 1
         }
 
         effect = {
@@ -22,11 +22,34 @@ political_decisions = {
 		    719 = { add_core = POL }
         }
     }
+	
+    Seek_effective_autonomy = {
+        picture = poland
+        potential = {
+                tag = POS
+				NOT = { has_country_flag = posen_free }
+        }
+
+        allow = {
+		year = 1848
+        }
+
+        effect = {
+		set_country_flag = posen_free	
+		any_country = {
+			limit = {
+				has_country_flag = POS_Lord
+			}
+			country_event = { id = 1130110 days = 5 }
+		}
+        }
+    }
 
     become_Congress_of_Poland = {
         picture = poland
         potential = {
 		OR = {
+                tag = POS
                 tag = GLO
                 tag = KRA }
 		nationalism_n_imperialism = 1

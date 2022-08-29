@@ -1169,12 +1169,14 @@ country_event = {
 	
 	trigger = {
 		tag = FRA
-		year = 1848
+		year = 1847
+        average_militancy = 4
 	}
 
 	
 	option = {
 		name = "EVTOPTA1070000"
+		government = democracy
 		add_country_modifier = {
 				name = political_instability
 				duration = 1800
