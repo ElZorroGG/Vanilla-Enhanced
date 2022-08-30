@@ -214,6 +214,7 @@ political_decisions = {
 					tag = ECU
 					tag = CLM
 					tag = VNZ
+					tag = ITM
 				}
 			}
 		}
@@ -909,6 +910,8 @@ unite_moldavia_wallachia = {
 				}
 				country_event = { id=111011 days=0 } }
 				GER = { all_core = { add_core = THIS } }
+				release_vassal = GLO
+				release_vassal = BKN
 		ai_will_do = {
 			factor = 1 }
 		}

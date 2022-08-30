@@ -139,53 +139,6 @@ political_decisions = {
 			set_country_flag = ems_ukaz_dispatched
 		}
 	}
-
-	protect_eastern_christians = {
-		potential = {
-			tag = RUS
-			is_greater_power = yes
-			government = absolute_monarchy
-			NOT = {
-				has_country_flag = eastern_christians_up_in_here_yall
-			}
-			exists = TUR
-			TUR = {
-				government = absolute_monarchy
-				is_greater_power = no
-			}
-		}
-		
-		allow = {
-			NOT = {
-				relation = {
-					who = TUR
-					value = 0
-				}
-			}
-			TUR = {
-				average_militancy = 3
-			}
-		}
-		
-		effect = {
-			set_country_flag = eastern_christians_up_in_here_yall
-			add_country_modifier = {
-				name = protector_of_eastern_christendom
-				duration = -1
-			}
-			any_greater_power = {
-				limit = {
-					NOT = {
-						tag = TUR
-					}
-					capital_scope = {
-						continent = europe
-					}
-				}
-				country_event = { id=19030 days=0 }
-			}
-		}
-	}
 	
 	peking_convention = {
 		potential = {
@@ -634,11 +587,12 @@ political_decisions = {
 		potential = {
 			tag = RUS
 			NOT = { has_country_flag = annexation_of_them_both }
-			has_country_flag = polish_revolution_has_happened
 			exists = CAU
 		}
 		allow = {
-		CAU = { ai = yes }
+		OR = { 
+			has_country_flag = polish_revolution_has_happened 
+			year = 1870 }
 		}
 		effect = {
 			inherit = CAU
@@ -664,11 +618,12 @@ political_decisions = {
 		potential = {
 			tag = RUS
 			NOT = { has_country_flag = annexation_of_them_both_2 }
-			has_country_flag = polish_revolution_has_happened
 			exists = UBD
 		}
 		allow = {
-		UBD = { ai = yes }
+		OR = { 
+			has_country_flag = polish_revolution_has_happened 
+			year = 1870 }
 		}
 		effect = {
 			UBD = { remove_accepted_culture = north_german }
@@ -792,12 +747,13 @@ political_decisions = {
 			OR = {
 				tag = PLC
 				tag = RUS
+				tag = ITM
 			}
 			owns = 958
 			NOT = { has_country_flag = accepted_ukie }
+			revolution_n_counterrevolution = 1
 		}	
 		allow = {
-			revolution_n_counterevolution = 1
 			war = no
 			NOT = { OR = { government = presidential_dictatorship 
 			government = bourgeois_dictatorship
@@ -819,6 +775,7 @@ political_decisions = {
 			OR = {
 				tag = PLC
 				tag = RUS
+				tag = ITM
 			}
 			owns = 718
 			NOT = { has_country_flag = accepted_ukie2 }
