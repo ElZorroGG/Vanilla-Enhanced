@@ -308,6 +308,30 @@ political_decisions = {
 			}
 		}
 	}
+	
+	italian_irredentism_on_switzerland = {
+		potential = {
+			tag = ITA
+			NOT = {
+				has_country_flag = italia_ulterior1
+			}
+			OR = { NOT = { SWI = { has_country_modifier = neutrality_modifier } } 
+			GER = { owns = 2568 } }
+		}
+		
+		allow = {
+			owns = 729
+		}
+		
+		effect = {
+			set_country_flag = italia_ulterior1
+			2568 = {
+				add_core = ITA
+			}
+			add_accepted_culture =  italian_swiss 
+		}
+	}
+	
 	Annexation_of_albania = {
 		potential = {
 			tag = ITA
@@ -339,7 +363,7 @@ political_decisions = {
 		
 		allow = {
 			AUS = { has_country_flag = venetian_revolution_has_happened }
-		}
+		} 
 		
 		effect = {
 			set_country_flag = italian_war_of_independence
@@ -407,10 +431,12 @@ political_decisions = {
             set_country_flag = made_the_call_to_union
             prestige = 20
             badboy = 10
-            AUS_726 = { add_core = THIS }
             PAP_741 = { add_core = THIS }
             TUS_744 = { add_core = THIS }
             738 = { add_core = THIS }
+            726 = { add_core = THIS }
+            727 = { add_core = THIS }
+            728 = { add_core = THIS }
             739 = { add_core = THIS }
             740 = { add_core = THIS }
             746 = { add_core = THIS }

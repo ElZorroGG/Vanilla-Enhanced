@@ -54,6 +54,8 @@ country_event = {
 	desc = "EVTDESC110021"
 	major = yes
 	
+	fire_only_once = yes
+	
 	trigger = {
 			tag = GER
 			exists = GER

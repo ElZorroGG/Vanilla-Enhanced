@@ -1,5 +1,5 @@
-owner = PAN
-controller = PAN
+owner = AFG
+controller = AFG
 add_core = PAN
 add_core = AFG
 trade_goods = grain

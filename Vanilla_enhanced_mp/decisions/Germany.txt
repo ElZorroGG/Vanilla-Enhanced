@@ -561,6 +561,7 @@ claim_togo = {
 			NOT = {
 				has_country_flag = prussian_warsaw
 			}
+		owns = 706
 		}
 		
 		allow = {
@@ -594,6 +595,97 @@ claim_togo = {
 			362 = {
 				add_core = THIS
 			}
+			set_country_flag = prussian_warsaw
+			}
+		}
+		
+	prussian_coup_d'etat = {
+		potential = {
+		OR = { 
+			tag = PRU
+			tag = NGF }
+			
+			NOT = {
+				has_country_flag = prussian_warsaw2
+			}
+		}
+		
+		allow = {
+		year = 1836
+		OR = { CPL = { in_sphere = PRU } CPL = { in_sphere = AUS } CPL = { in_sphere = NGF } }
+		}
+		
+		effect = {
+			prestige = 2
+			badboy = 5
+			RUS = { release_vassal = CPL }
+			RUS = { casus_belli = {
+            target = THIS
+            type = cut_down_to_size
+            months = 12
+        } }
+			set_country_flag = prussian_warsaw2
+			}
+		}
+		
+		German_border_lands = {
+		potential = {
+		tag = GER			
+			NOT = {
+				has_country_flag = prussian_warsaw
+			}
+		government = fascist_dictatorship
+		}
+		
+		allow = {
+		government = fascist_dictatorship
+		POL = { in_sphere = THIS }
+		owns = 692
+		}
+		
+		effect = {
+			prestige = 2
+			badboy = 5
+			717 = {
+				add_core = THIS
+			}
+			708 = {
+				add_core = THIS
+			}
+			709 = {
+				add_core = THIS
+			}
+			707 = {
+				add_core = THIS
+			}
+			719 = {
+				add_core = THIS
+			}
+			936 = {
+				add_core = THIS
+			}
+			700 = {
+				add_core = THIS
+			}
+			701 = {
+				add_core = THIS
+			}
+			699 = {
+				add_core = THIS
+			}
+			694 = {
+				add_core = THIS
+			}
+			691 = {
+				add_core = THIS
+			}
+			690 = {
+				add_core = THIS
+			}
+			692 = {
+				add_core = THIS
+			}
+			POL = { limit = { is_core = GER } secede_province = GER }
 			set_country_flag = prussian_warsaw
 			}
 		}
@@ -655,6 +747,8 @@ claim_togo = {
 		potential = {
 			tag = GER
 			NOT = { has_country_flag = Septemberprogramm }
+			owns = 397
+			owns = 413
 		}
 
 		allow = {
@@ -672,6 +766,34 @@ claim_togo = {
 		effect = {
 			set_country_flag = Septemberprogramm
 			any_country = { limit = { owns = 398 } country_event = 118000 }
+			badboy = 10
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	Octoberprogramm = {
+		potential = {
+			tag = GER
+			has_country_flag = Septemberprogramm
+			NOT = { has_country_flag = Octoberprogramm }
+		}
+
+		allow = {
+	        money = 1000000
+			owns = 397
+			owns = 413
+		owns = 398
+		mass_politics = 1
+		social_alienation = 1
+		}
+
+		effect = {
+			set_country_flag = Octoberprogramm
+			BEL = { all_core = { add_core = GER } }
+			NET = { all_core = { add_core = GER } }
+			FRA_399 = { add_core = THIS }
 			badboy = 10
 		}
 
@@ -712,6 +834,7 @@ claim_togo = {
 			tag = GER 
 			owns = 625 
 		BOH = { all_core = { owned_by = THIS } }
+		NOT = { owns = 633 }
 		}
 
 		allow = {
@@ -719,11 +842,13 @@ claim_togo = {
 		}
 
 		effect = {
-			set_country_flag = Septemberprogramm2
 			badboy = -5
 			625 = { secede_province = BOH }
 			631 = { secede_province = BOH }
 			626 = { secede_province = BOH }
+			1667 = { secede_province = BOH }
+			1817 = { secede_province = BOH }
+			2667 = { secede_province = BOH }
 			create_vassal = BOH
 		}
 

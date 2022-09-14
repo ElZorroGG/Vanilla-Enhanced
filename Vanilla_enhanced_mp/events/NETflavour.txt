@@ -36,7 +36,7 @@ country_event = {
 	picture = ""
 	
 	trigger = {
-		tag = NET
+		tag = NEE
 		year = 1840
 		NOT = { year = 1850 
 			has_country_flag = wallons_angwy

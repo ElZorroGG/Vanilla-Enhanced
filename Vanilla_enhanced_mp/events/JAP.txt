@@ -47,3 +47,54 @@ country_event = {
 			1644 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 15 }
 	}
 }
+
+#Japenese Cores
+country_event = {
+	id = 11293001
+	title = "EVTNAME112930"
+	desc = "EVTDESC112930"
+	
+	trigger = {
+		owns = 1649
+		owns = 1657
+		tag = JAP
+		NOT = {
+				has_country_flag = apan
+		}
+	}
+	
+	fire_only_once = yes
+	mean_time_to_happen = { months = 2 }
+
+	option = {
+		name = "remove Tokugawa's cores"
+		set_country_flag = apan
+			SHO = { all_core = { remove_core = SHO } } 
+	}
+}
+
+
+#Japenese Cores
+country_event = {
+	id = 11293002
+	title = "EVTNAME112930"
+	desc = "EVTDESC112930"
+	
+	trigger = {
+		owns = 1649
+		owns = 1657
+		tag = SHO
+		NOT = {
+				has_country_flag = apan
+		}
+	}
+
+	fire_only_once = yes
+	mean_time_to_happen = { months = 2 }
+
+	option = {
+		name = "remove Imperial's cores"
+		set_country_flag = apan
+			JAP = { all_core = { remove_core = JAP } } 
+	}
+}

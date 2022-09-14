@@ -395,10 +395,10 @@ political_decisions = {
             YEM = { 1412 = { secede_province = ENG } }
 			prestige = 20
 			badboy = 5
-			THIS = { create_vassal = YEM }
+			THIS = { create_vassal = YEM } }
         }
 	}
-		secure_malaya = {
+	secure_malaya = {
 		picture = map_malaysia
 		potential = {
 			civilized = yes
@@ -415,15 +415,13 @@ political_decisions = {
 		}
 
 		allow = {
-			revolution_n_counterrevolution = 1
 			war = no
 		}
 
 		effect = {
 			set_global_flag = malaya_secured
 			prestige = 5
-			1389 = { secede_province = THIS }
-			1391 = { secede_province = THIS }
+			THIS = { country_event = 1100040 }
 		}
 	}
 	
@@ -447,6 +445,50 @@ political_decisions = {
 
 		ai_will_do = {
 			factor = 1
+		}
+	}
+	
+	Estern_India_territory = {
+		picture = india
+		potential = {
+			tag = ENG
+			owns = 1227
+			owns = 1221
+			AFG = { owns = 1219 }
+			NOT = {
+				owns = 1219 
+			}
+			
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			relation = {
+				who = AFG
+				value = -50
+			}
+			AFG = { 1219 = {
+				secede_province = THIS }
+				1218 = {
+				secede_province = THIS }
+				1220 = {
+				secede_province = THIS }
+			}
+			badboy = 1
+			prestige = 5
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					badboy = 0.2
+				}
+			}
 		}
 	}
 }

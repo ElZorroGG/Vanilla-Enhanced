@@ -476,6 +476,43 @@ country_event = {
 #Polish revolution
 country_event = {
 
+	id = 1132110
+	title = "'Forget any dreams'"
+	desc = "Tsar Alexander II declared to the dream of Polish autonomy after killing protesters in Warsaw requesting more rights in their own land, this shameful move created a bunch of secret societies that now take up arms for the sake of freedom."
+	major = yes
+	
+	trigger = { OR = { tag = CPL
+						tag = POL } 
+	OR = { AND = {
+		THIS = {
+			substate_of = RUS
+		owns = 706 }
+		year = 1855
+		NOT = { 
+			RUS = { has_country_flag = polish_revolution_has_happened }
+		}
+            any_owned_province = {
+                any_core = { primary_culture = polish }
+                OR = {
+                    average_militancy = 4
+                    average_consciousness = 7
+                }
+            } } 
+		AND = { year = 1863 THIS = { substate_of = RUS } 
+		NOT = { 
+			has_country_flag = polish_revolution_has_happened
+		} } }
+	}
+		fire_only_once = yes
+	
+	option = {
+		name = "Poland must be free"
+		RUS = { country_event = 113211 }
+	}
+}
+#Polish revolution
+country_event = {
+
 	id = 113211
 	title = "EVTNAME113211"
 	desc = "EVTDESC113211"
@@ -488,9 +525,9 @@ country_event = {
 					tag = NGF
 					tag = GER } 
 	OR = { AND = {
-		owns = 706
-		CPL = {
-			exists = no }
+		FROM = {
+			substate_of = THIS
+		owns = 706 }
 		year = 1855
 		NOT = { 
 			has_country_flag = polish_revolution_has_happened
@@ -502,11 +539,7 @@ country_event = {
                     average_consciousness = 7
                 }
             } } 
-		AND = {
-		owns = 706
-		CPL = {
-			exists = no }
-		year = 1863
+		AND = { year = 1863 CPL = { substate_of = THIS } 
 		NOT = { 
 			has_country_flag = polish_revolution_has_happened
 		} } }
@@ -515,9 +548,10 @@ country_event = {
 	
 	option = {
 		name = "EVTOPTA113211"
-
+		release_vassal = CPL
+		CPL = { government = democracy }
         casus_belli = {
-            target = CPL
+            target = FROM
             type = conquest
             months = 12
         }
@@ -530,12 +564,6 @@ country_event = {
 		any_pop = {
 			consciousness = 2
 			militancy = 1
-		}
-		any_owned = {
-			limit = {
-				is_core = CPL
-			}
-			secede_province = CPL
 		}
 		any_owned = {
 			limit = {
@@ -579,6 +607,10 @@ country_event = {
 		LIT = {
 			capital = 360
 			leadership = 80
+		}
+		diplomatic_influence = {
+			who = CPL
+			value = -400
 		}
 
 		war = {
@@ -610,136 +642,24 @@ country_event = {
             country_event = 114030
 	    }
 	}
-	
-	option = {
-		name = "EVTOPTB113211"
-        casus_belli = {
-            target = CPL
-            type = conquest
-            months = 12
-        }
-
-        casus_belli = {
-            target = LIT
-            type = conquest
-            months = 12
-        }
-		any_pop = {
-			consciousness = 2
-			militancy = 1
-		}
-		any_owned = {
-			limit = {
-				is_core = CPL
-			}
-			secede_province = CPL
-		}
-		CPL = {
-			capital = 706
-			leadership = 80
-		}
-		any_owned = {
-			limit = {
-				is_core = LIT
-			}
-			secede_province = LIT
-		}
-		719 = {
-			secede_province = LIT
-		}
-		936 = {
-			secede_province = LIT
-		}
-		939 = {
-			secede_province = LIT
-		}
-		718 = {
-			secede_province = LIT
-		}
-		948 = {
-			secede_province = LIT
-		}
-		942 = {
-			secede_province = LIT
-		}
-		946 = {
-			secede_province = LIT
-		}
-		942 = {
-			secede_province = LIT
-		}
-		940 = {
-			secede_province = LIT
-		}
-		937 = {
-			secede_province = LIT
-		}
-		941 = {
-			secede_province = LIT
-		}
-		LIT = {
-			capital = 360
-			leadership = 80
-		}
-
-
-		THIS = {
-			war = {
-				target = CPL
-				attacker_goal = {
-					casus_belli = conquest
-				}
-				defender_goal = {
-					casus_belli = status_quo
-				}
-			}
-		war = {
-			target = LIT
-			attacker_goal = {
-				casus_belli = annex_core_country
-			}
-			
-			defender_goal = {
-				casus_belli = status_quo
-			}
-		}
-		}
-		set_country_flag = polish_revolution_has_happened
-        any_country = {
-            limit = { NOT = { tag = THIS } 
-                is_greater_power = yes
-                capital_scope = { continent = europe }
-            }
-            country_event = 114030
-	    }
-		change_tag_no_core_switch = CPL
-	}
 	option = {
 		name = "EVTOPTC113211"
+		release_vassal = CPL
+		CPL = { government = democracy }
         casus_belli = {
-            target = CPL
+            target = FROM
             type = conquest
             months = 12
         }
 
         casus_belli = {
-            target = LIT
+            target = CPL
             type = conquest
             months = 12
         }
 		any_pop = {
 			consciousness = 2
 			militancy = 1
-		}
-		any_owned = {
-			limit = {
-				is_core = CPL
-			}
-			secede_province = CPL
-		}
-		CPL = {
-			capital = 706
-			leadership = 80
 		}
 		any_owned = {
 			limit = {
@@ -786,8 +706,11 @@ country_event = {
 		}
 
 
-		THIS = {
-			war = {
+		diplomatic_influence = {
+			who = CPL
+			value = -400
+		}
+		war = {
 				target = CPL
 				attacker_goal = {
 					casus_belli = conquest
@@ -805,7 +728,6 @@ country_event = {
 			defender_goal = {
 				casus_belli = status_quo
 			}
-		}
 		}
 		set_country_flag = polish_revolution_has_happened
         any_country = {
@@ -1043,4 +965,31 @@ country_event = {
             }
         }
     }
+}
+#supporting a revolution
+country_event = {
+
+	id = 10700000
+	title = "Supporting the spring of nations"
+	desc = "Our intervention in favour of Hungary will cause a wave of unrest in our own lands. Was it worth it?"
+	major = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = RUS
+		war_with = AUS
+		AUS = { war_with = HUN }
+		year = 1848
+		NOT = { year = 1852 }
+	}
+
+	
+	option = {
+		name = "EVTOPTA10700000"
+		add_country_modifier = {
+				name = political_instability
+				duration = 4000
+			}
+		}
 }

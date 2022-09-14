@@ -83,21 +83,21 @@ vassal = {
 
 # NET-LUX
 vassal = {
-	first = NET
+	first = NEE
 	second = LUX
 	start_date = 1815.1.1
 	end_date = 1890.11.23
 }
 # NET-SRI
 vassal = {
-	first = NET
+	first = NEE
 	second = SRI
 	start_date = 1815.1.1
 	end_date = 1890.11.23
 }
 # NET-JAV
 vassal = {
-	first = NET
+	first = NEE
 	second = JAV
 	start_date = 1815.1.1
 	end_date = 1890.11.23
@@ -220,6 +220,30 @@ vassal = {
 vassal = {
 	first = PRU
 	second = SGM
+	start_date = 1836.1.1
+	end_date = 1838.1.1
+}
+
+# Prussia-Posen
+substate = {
+	first = PRU
+	second = POS
+	start_date = 1836.1.1
+	end_date = 1838.1.1
+}
+
+# Russia-Congress of Poland
+substate = {
+	first = RUS
+	second = CPL
+	start_date = 1836.1.1
+	end_date = 1838.1.1
+}
+
+# Siam - Luang Prabang
+substate = {
+	first = SIA
+	second = LUA
 	start_date = 1836.1.1
 	end_date = 1838.1.1
 }

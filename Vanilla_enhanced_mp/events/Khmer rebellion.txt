@@ -1,0 +1,94 @@
+country_event = {
+    id = 97500000
+    title = "EVTNAME97500000" #Set up queen May
+    desc = "EVTDESC97500000"
+    picture = ""
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVT97500000OPTA"
+        prestige = 10
+        relation = { who = DAI value = -50 }
+        SIA = { country_event = { id = 975010000 days = 10 } }
+		
+			add_country_modifier = {
+				name = political_instability
+				duration = 1000
+			}
+    }
+}
+
+country_event = {
+    id = 975010000
+    title = "EVTNAME975010000" #Siam request
+    desc = "EVTDESC975010000"
+    picture = "ottoman"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVT975010000OPTA"
+        CAM = { country_event = { id = 97502000 days = 10 } }
+		prestige = 5
+        ai_chance = {
+            factor = 100
+        }
+    }
+
+    option = {
+        name = "EVT975010000OPTB"
+        CAM = { country_event = { id = 97503000 days = 10 } }
+        prestige = -20
+        leave_alliance = CAM
+        relation = { who = CAM value = -50 }
+    }
+}
+
+country_event = {
+    id = 97502000
+    title = "EVTNAME97502000" #Revolt per ser
+    desc = "EVTDESC975020000"
+    picture = "crimean_war_ships"
+	mayor = yes
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVT975020000OPTA"
+        prestige = 5
+        create_alliance = SIA 
+		DAI = { release_vassal = CAM }
+		DAI = { 
+			war = {
+                target = CAM
+			attacker_goal = {
+				casus_belli = make_puppet }
+			}
+		}
+    }
+}
+
+
+country_event = {
+    id = 97503000
+    title = "EVTNAME97502000" #Revolt per ser
+    desc = "EVTDESC975020000"
+    picture = "crimean_war_ships"
+	mayor = yes
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVT975020000OPTA"
+        prestige = 5
+		DAI = { release_vassal = CAM }
+		DAI = { 
+			war = {
+                target = CAM
+			attacker_goal = {
+				casus_belli = make_puppet }
+			}
+		}
+    }
+}

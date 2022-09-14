@@ -12,7 +12,7 @@ country_event = {
 		war_with = MEX
 		any_owned_province = {
 			country_units_in_province = MEX }
-
+		NOT = { year = 1838 } 
 		}
 	mean_time_to_happen = {
 		days = 20

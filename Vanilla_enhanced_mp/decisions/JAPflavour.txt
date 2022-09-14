@@ -11,9 +11,11 @@ political_decisions = {
 		
 		allow = {
 			exists = KOR
+			OR = { 
 			KOR = {
 				vassal_of = THIS
 			}
+			AND = { KOR = { in_sphere = THIS } year = 1910 } }
 		}
 		
 		effect = {

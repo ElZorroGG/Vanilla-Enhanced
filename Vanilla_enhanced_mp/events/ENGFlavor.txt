@@ -1925,6 +1925,7 @@ country_event = {
 				}
 			}
 			secede_province = IRE
+			remove_core = THIS
 		}
 		IRE = {
 			capital = 263
@@ -1967,6 +1968,8 @@ country_event = {
 			83 = { secede_province = THIS any_pop = { literacy = -0.3 } life_rating = 5 }
 			92 = { secede_province = THIS any_pop = { literacy = -0.3 } life_rating = 5 }
 			91 = { secede_province = THIS any_pop = { literacy = -0.3 } life_rating = 5 }
+			111 = { secede_province = THIS any_pop = { literacy = -0.3 } life_rating = 5 }
+			114 = { secede_province = THIS any_pop = { literacy = -0.3 } life_rating = 5 }
 			93 = { secede_province = THIS }
 			80 = { secede_province = THIS }
 			79 = { secede_province = THIS }
@@ -1982,8 +1985,65 @@ country_event = {
 			78 = {	
 				add_core = USA
 			}
+			19 = {	
+				add_core = USA
+			}
+			15 = {	
+				add_core = USA
+			}
 	}
 }
+country_event = {
+	id = 118005 #Germany gets the proposal
+	title = "EVTNAME118005"
+	desc = "EVTDESC118005"
+	picture = "expansion"
+
+
+    is_triggered_only = yes
+
+	option = {
+		name = "We don't accept"
+		badboy = 3
+	}
+	option = {
+		name = "We accept"
+			relation = {
+				who = ENG
+				value = 50
+			}
+		        2200 = { secede_province = FROM }
+		        2196 = { secede_province = FROM }
+		badboy = -3
+	}
+}
+country_event = {
+	id = 122020 #Germany gets the proposal
+	title = "EVTNAME122020"
+	desc = "EVTDESC122020"
+	picture = "expansion"
+
+
+    is_triggered_only = yes
+
+	option = {
+		name = "We don't accept"
+		badboy = 1
+	}
+	option = {
+		name = "We accept"
+			relation = {
+				who = FROM
+				value = 50
+			}
+		    1324 = { secede_province = FROM }
+		    1321 = { secede_province = FROM }
+		    1322 = { secede_province = FROM }
+		    1323 = { secede_province = FROM }
+		badboy = -3
+	}
+}
+
 country_event = {
 	id = 118005 #Germany gets the proposal
 	title = "EVTNAME118005"
@@ -2029,5 +2089,225 @@ country_event = {
 			}
 		        2196 = { secede_province = FROM }
 		badboy = -3
+	}
+}
+country_event = {
+	id = 122020 #Germany gets the proposal
+	title = "Purcharse of Sri Lanka"
+	desc = "A Dutch diplomat has approached us with a proposal: They but their former colony of Ceylon, we can decline, but that would put us in a positions of imperialists among European powers."
+	picture = "expansion"
+
+    is_triggered_only = yes
+
+	option = {
+		name = "We don't accept"
+		badboy = 3
+		FROM = { prestige = -10 }
+	}
+	
+	option = {
+		name = "We accept"
+			relation = {
+				who = FROM
+				value = 50
+			}
+		        1324 = { secede_province = FROM }
+		        1321 = { secede_province = FROM }
+		        1322 = { secede_province = FROM }
+		        1323 = { secede_province = FROM }
+		badboy = -3
+		money = 200000
+		NEE = { money = -200000 }
+	}
+}
+#Herat Events
+country_event = {
+	id = 36980 #Iran invades Herat
+	title = "EVTNAME36980"
+	desc = "EVTDESC36980"
+	picture = "herat"
+
+	trigger = {
+		tag = ENG
+		PER = {
+			has_country_flag = invaded_herat
+			owns = 1214
+		}
+		NOT = { has_country_flag = anglo_persian_war }
+	}
+
+	option = {
+		name = "EVTOPTA36980"
+		set_country_flag = anglo_persian_war        
+		casus_belli = {
+            target = PER
+            type = liberate_country
+            months = 12
+        }
+		war = {
+			target = PER
+			attacker_goal = { casus_belli = liberate_country country = MAK }
+			attacker_goal = { casus_belli = status_quo }
+		}
+		PER = { country_event = { id = 36981 days = 0 } }
+		MAK = { set_country_flag = freedom }
+		ai_chance = {
+			factor = 0.95
+		}
+	}
+
+	option = {
+		name = "EVTOPTB36980"
+		set_country_flag = anglo_persian_war
+		prestige = -25
+		PER = { country_event = { id = 36982 days = 0 } }
+		ai_chance = {
+			factor = 0.05
+		}
+	}
+}
+
+country_event = {
+	id = 36981
+	title = "EVTNAME36981"
+	desc = "EVTDESC36981"
+	picture = "council_of_paris"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA36981"
+	}
+}
+
+country_event = {
+	id = 36982
+	title = "EVTNAME36982"
+	desc = "EVTDESC36982"
+	picture = "council_of_paris"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA36982"
+	}
+}
+
+country_event = {
+	id = 36983 #Afghanistan invades Herat
+	title = "EVTNAME36983"
+	desc = "EVTDESC36983"
+	picture = "herat"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA36983"
+		diplomatic_influence = {
+			who = MAK
+			value = -200
+		}
+		leave_alliance = MAK
+		relation = {
+			who = AFG
+			value = 200
+		}
+		diplomatic_influence = {
+			who = AFG
+			value = 200
+		}
+		AFG = { country_event = { id = 36984 days = 0 } }
+		ai_chance = {
+			factor = 0.95
+		}
+	}
+
+	option = {
+		name = "EVTOPTB36983"
+		diplomatic_influence = {
+			who = MAK
+			value = 400
+		}
+		create_alliance = MAK
+		relation = {
+			who = AFG
+			value = -200
+		}
+		diplomatic_influence = {
+			who = AFG
+			value = -200
+		}
+		leave_alliance = AFG
+		AFG = { country_event = { id = 36985 days = 0 } }
+		ai_chance = {
+			factor = 0.05
+		}
+	}
+}
+
+country_event = {
+	id = 36984
+	title = "EVTNAME36984"
+	desc = "EVTDESC36984"
+	picture = "council_of_paris"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA36984"		
+		casus_belli = {
+            target = MAK
+            type = conquest
+            months = 12
+        }
+		war = {
+			target = MAK
+			attacker_goal = { casus_belli = conquest_free }
+		}
+	}
+}
+
+country_event = {
+	id = 36985
+	title = "EVTNAME36985"
+	desc = "EVTDESC36985"
+	picture = "council_of_paris"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA36985"		
+		casus_belli = {
+            target = MAK
+            type = conquest
+            months = 12
+        }
+		war = {
+			target = MAK
+			attacker_goal = { casus_belli = conquest }
+		}
+		ai_chance = {
+			factor = 0.05
+		}
+	}
+	
+	option = {
+		name = "EVTOPTB36985"
+		ai_chance = {
+			factor = 0.95
+		}
+	}
+}
+country_event = {
+	id = 369810000
+	title = "Herat free"
+	desc = "blablabla"
+	picture = "council_of_paris"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA36981"
+		MAK = { all_core = { remove_core = PER } }
 	}
 }

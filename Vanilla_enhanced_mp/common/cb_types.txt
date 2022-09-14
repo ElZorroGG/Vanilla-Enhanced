@@ -1307,7 +1307,7 @@ demand_concession_casus_belli = {
 	construction_speed = 1.2
 	crisis = no
 	
-	badboy_factor = 1
+	badboy_factor = 2
 	prestige_factor = 0.1
 	peace_cost_factor = 0.6
 	penalty_factor = 1
@@ -1423,7 +1423,7 @@ establish_protectorate_casus_belli = {
 	construction_speed = 1.2
 	crisis = no
 	
-	badboy_factor = 1
+	badboy_factor = 1.7
 	prestige_factor = 1
 	peace_cost_factor = 1
 	penalty_factor = 1
@@ -2164,7 +2164,8 @@ conquest_low = {
 	
 	can_use = {
 		# this = { NOT = { badboy = 1 } }
-		NOT = {	total_pops = 400000 }
+		NOT = {	total_pops = 400000
+			civilized = no }
 
 
 		
@@ -4306,5 +4307,99 @@ balkan_liberation = {
 
     on_po_accepted = {
         country_event =    118001    # Territorial Loss event
+    }
+}
+
+crimean_war_russia = {
+    sprite_index = 5
+    is_triggered_only = yes
+    months = 12
+    constructing_cb = no
+    crisis = no
+
+	break_truce_prestige_factor = 1
+	break_truce_infamy_factor = 1
+	break_truce_militancy_factor = 1
+	peace_cost_factor = 40
+	truce_months = 60
+	
+	good_relation_prestige_factor = 1
+	good_relation_infamy_factor = 1
+	good_relation_militancy_factor = 1
+
+    can_use = {
+        always = no
+        NOT = { is_our_vassal = THIS }
+        number_of_states = 2 # annex if you want their last state
+        is_vassal = no
+        NOT = { has_country_modifier = neutrality_modifier }
+        THIS = {
+            NOT = {
+                has_country_modifier = neutrality_modifier
+            }
+        }
+    }
+
+	po_disarmament = no
+	po_reparations = yes
+    war_name = crimean_war
+
+    on_add = {
+        move_issue_percentage = {
+            from = jingoism
+            to = pro_military
+            value = 0.25
+        }
+    }
+
+    on_po_accepted = {
+        country_event =    97507    # Territorial Loss event
+    }
+}
+
+crimean_war_france = {
+    sprite_index = 5
+    is_triggered_only = yes
+    months = 12
+    constructing_cb = no
+    crisis = no
+
+	break_truce_prestige_factor = 1
+	break_truce_infamy_factor = 1
+	break_truce_militancy_factor = 1
+	peace_cost_factor = 30
+	truce_months = 60
+	
+	good_relation_prestige_factor = 1
+	good_relation_infamy_factor = 1
+	good_relation_militancy_factor = 1
+
+    can_use = {
+        always = no
+        NOT = { is_our_vassal = THIS }
+        number_of_states = 2 # annex if you want their last state
+        is_vassal = no
+        NOT = { has_country_modifier = neutrality_modifier }
+        THIS = {
+            NOT = {
+                has_country_modifier = neutrality_modifier
+            }
+        }
+    }
+
+	po_disarmament = no
+	po_reparations = yes
+    war_name = crimean_war
+
+    on_add = {
+        move_issue_percentage = {
+            from = jingoism
+            to = pro_military
+            value = 0.25
+        }
+    }
+
+    on_po_accepted = {
+        country_event =    97508     # Territorial Loss event
     }
 }

@@ -106,4 +106,26 @@ bulgaria_will_be_completed
 			factor = 1
 		}
 	}
+	general_revolt = {
+	picture = bulgarianindependence
+		potential = {
+			tag = BUL
+				has_country_flag = search_for_independence
+				RUS = { has_country_flag = annexation_of_them_both_2 }
+		} 
+		
+		allow = {
+		OR = { 
+		vassal_of = RUS
+		ROM = { vassal_of = RUS } }
+		}
+		
+		effect = {
+			prestige = 20
+			badboy = -5
+			RUS = { release_vassal = THIS }
+			ROM = { country_event = 119000 }
+			clr_country_flag = search_for_independence
+			}
+		}
 }

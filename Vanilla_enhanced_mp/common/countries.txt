@@ -372,6 +372,14 @@ TUK     = "countries/Tukulor Empire.txt"
 DAM     = "countries/Damagaram.txt"
 MAS     = "countries/Massina.txt"
 BLC     = "countries/Baluchistan.txt"
+BRG     = "countries/Borgu.txt"
+GBU     = "countries/Gabu.txt"
+TRZ     = "countries/Trarza.txt"
+ARO     = "countries/Aro.txt"
+CLA     = "countries/Calabar.txt"
+NEE     = "countries/United Kingdom of the Netherlands.txt"
+TAI     = "countries/Taiwan.txt"
+SUD     = "countries/Sudan.txt"
 
 ##HoD Dominions
 dynamic_tags  = yes # any tags after this is considered dynamic dominions

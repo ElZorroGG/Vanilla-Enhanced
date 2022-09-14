@@ -2,139 +2,210 @@
 #        GOLD EVENTS        #
 #############################
 province_event = {
-	
-	id = 1100
 
-	trigger = {
-		year = 1836
-		or = {
-			province_id = 1				# Sitka
-			province_id = 2				# Yakutat
-			province_id = 766			# Sassari
-			province_id = 769			# Postojna
-			province_id = 773			# Karlovac
-			province_id = 1387			# Kuala Lumpur
-			province_id = 1390			# Kuantan
-			province_id = 1422			# Muraleve
-			province_id = 1440			# Sumbawa
-			province_id = 1564			# Caozhou
-			province_id = 1884			# Freetown
-			province_id = 2501			# Kimberley
-			province_id = 2153			# Durango
-			province_id = 2157			# Culiacan
-			province_id = 2179			# Acapulco
-			province_id = 2295			# Lima
-			province_id = 2323			# La Serena
-			province_id = 2500			# Kalgoorlie
-			province_id = 2503			# Wiluna
-			province_id = 2575			# Ipoh
-			province_id = 2601			# Sandy Desert
-			province_id = 2605			# Gibson's Desert
-			province_id = 1659			# Kobe
-			province_id = 2142			# Chihuahua
-			province_id = 2255			# Barranquilla
-		}
-		not = { trade_goods = precious_metal }
-	}
+    id = 1100
 
-	mean_time_to_happen =  {
-		months = 12
+    trigger = {
+        year = 1836
+        or = {
+            province_id = 766            # Sassari
+            province_id = 769            # Postojna
+            province_id = 773            # Karlovac
+            province_id = 1422            # Muraleve
+            province_id = 1440            # Sumbawa
+            province_id = 2153            # Durango
+            province_id = 2157            # Culiacan
+            province_id = 2179            # Acapulco
+            #province_id = 2323            # La Serena
+            province_id = 2575            # Ipoh
+            #province_id = 1659            # Kobe
+            province_id = 2142            # Chihuahua
+            province_id = 2252            # Medellin
+            province_id = 1187            # Semipalatinsk
+            province_id = 1070            # Yeniseysk - Russia
+        }
+        NOT = {
+            year = 1890
+            trade_goods = precious_metal
+            trade_goods = coal
+            trade_goods = iron
+        }
+    }
 
-	}
+    mean_time_to_happen =  {
+        months = 12
+    }
 
-	title = "EVTNAME1100"
-	desc = "EVTDESC1100"
+    title = "EVTNAME1100"
+    desc = "EVTDESC1100"
 
-	option = {
-		name = "EVTOPTA1100"
-		trade_goods = precious_metal
-		add_province_modifier = {
-			name = gold_rush
-			duration = 730
-		}
-	}
+    option = {
+        name = "EVTOPTA1100"
+        trade_goods = precious_metal
+        add_province_modifier = {
+            name = gold_rush
+            duration = 730
+        }
+        owner = {
+            random_owned = {
+                limit = {
+                    owner = {
+                        NOT = { has_country_modifier = gold_rush_country }
+                        OR = {
+                            capital_scope = { continent = north_america }
+                            capital_scope = { continent = south_america }
+                            primary_culture = australian
+                        }
+                    }
+                }
+                owner = { add_country_modifier = { name = gold_rush_country duration = 730 } }
+            }
+        }
+    }
 }
 
 province_event = {
-	
-	id = 1101
 
-	trigger = {
-		year = 1848
-		or = {
-			province_id = 88			# Mariposa
-			province_id = 695			# Königsberg
-		}
-		not = { trade_goods = precious_metal }
-	}
+    id = 1101
 
-	mean_time_to_happen =  {
-		months = 12
+    trigger = {
+        year = 1848
+        or = {
+            province_id = 89            # Los Angeles
+            province_id = 104            # San Francisco
+            province_id = 3                # Kenai
+            province_id = 90            # San Diego
+            province_id = 695            # Königsberg
+            province_id = 2470            # Port Macquaire Australia
+            province_id = 2471            # Bathurst Australia
+            province_id = 2472            # Eden Australia
+            province_id = 2480            # Beechworth Australia
+            province_id = 2481            # Swan Hill Australia
+            province_id = 1084            # Utchan
+            province_id = 2645            # Bodaybo, Russia
+            #province_id = 2058            # Moyo, Mozambique
+            province_id = 2246            # Maripasoula, French Guiana
+            province_id = 2241            # Cayenne, French Guiana
+        }
+        NOT = {
+            year = 1900
+            trade_goods = precious_metal
+            trade_goods = coal
+            trade_goods = iron
+        }
+    }
 
-	}
+    mean_time_to_happen =  {
+        months = 12
+        modifier = {
+            factor = 1000
+            OR = {
+                province_id = 2471
+                province_id = 2470
+                province_id = 2472
+                province_id = 2480
+                province_id = 2481
+                province_id = 1084
+            }
+            NOT = { year = 1850 }
+        }
+    }
 
-	title = "EVTNAME1100"
-	desc = "EVTDESC1100"
-	picture = ""
+    title = "EVTNAME1100"
+    desc = "EVTDESC1100"
 
-	option = {
-		name = "EVTOPTA1100"
-		trade_goods = precious_metal
-		# life_rating = 5
-	}
+    option = {
+        name = "EVTOPTA1100"
+        trade_goods = precious_metal
+        # life_rating = 5
+        add_province_modifier = { name = gold_rush duration = 730 }
+        owner = { random_owned = { limit = { province_id = 695 } remove_province_modifier = gold_rush } }
+        owner = {
+            random_owned = {
+                limit = {
+                    owner = {
+                        NOT = { has_country_modifier = gold_rush_country }
+                        OR = {
+                            capital_scope = { continent = north_america }
+                            capital_scope = { continent = south_america }
+                            primary_culture = australian
+                        }
+                    }
+                }
+                owner = { add_country_modifier = { name = gold_rush_country duration = 730 } }
+            }
+        }
+    }
 }
-
 
 province_event = {
-	
-	id = 1102
 
-	trigger = {
-		year = 1850
-		province_id = 1084				# Utchan
-		not = { trade_goods = precious_metal }
-	}
+    id = 1103
 
-	mean_time_to_happen =  {
-		months = 12
+    trigger = {
+        year = 1861
+        OR = {
+            province_id = 93            # Pocatello
+            province_id = 2479            # Sale Australia
+            province_id = 2488            # Cooktown Australia
+            province_id = 2275            # Angostura Venezuela
+            #province_id = 2334            # Punta Arenas
+            #province_id = 2400            # Rio Grande
+            province_id = 1643            # Sapporo
+            province_id = 409            # Strasbourg
+            AND = {
+                province_id = 2116            # Fianarantsoa (ambositra)
+                owner = { invention = cyanide_milling }
+            }
+            AND = {
+                province_id = 2201            # San Jose, Costa Rica
+                year = 1888
+            }
+        }
 
-	}
+        NOT = {
+            year = 1920
+            trade_goods = precious_metal
+            trade_goods = coal
+            trade_goods = iron
+        }
+    }
 
-	title = "EVTNAME1100"
-	desc = "EVTDESC1100"
+    mean_time_to_happen =  {
+        months = 12
+        modifier = {
+            factor = 1000
+            province_id = 1643
+            NOT = { year = 1910 }
+        }
+    }
 
-	option = {
-		name = "EVTOPTA1100"
-		trade_goods = precious_metal
-		# life_rating = 5
-	}
+    title = "EVTNAME1100"
+    desc = "EVTDESC1100"
+
+    option = {
+        name = "EVTOPTA1100"
+        owner = { random_owned = { limit = { province_id = 2488 NOT = { trade_goods = precious_metal } } change_province_name = "Cairns" } }
+        trade_goods = precious_metal
+        add_province_modifier = { name = gold_rush duration = 730 }
+        # life_rating = 5
+        owner = {
+            random_owned = {
+                limit = {
+                    owner = {
+                        NOT = { has_country_modifier = gold_rush_country }
+                        OR = {
+                            capital_scope = { continent = north_america }
+                            capital_scope = { continent = south_america }
+                            primary_culture = australian
+                        }
+                    }
+                }
+                owner = { add_country_modifier = { name = gold_rush_country duration = 730 } }
+            }
+        }
+    }
 }
-
-province_event = {
-	
-	id = 1103
-
-	trigger = {
-		year = 1861
-		province_id = 93			# Pocatello
-		not = { trade_goods = precious_metal }
-	}
-
-	mean_time_to_happen =  {
-		months = 12
-
-	}
-
-	title = "EVTNAME1100"
-	desc = "EVTDESC1100"
-
-	option = {
-		name = "EVTOPTA1100"
-		trade_goods = precious_metal
-		# life_rating = 5
-	}
-}
-
 #Witwatersrand Gold Rush
 province_event = {
 	id = 1139

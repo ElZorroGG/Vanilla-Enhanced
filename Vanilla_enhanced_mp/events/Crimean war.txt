@@ -316,6 +316,7 @@ country_event = {
 			806 = { secede_province = BUL  }
 			675 = { secede_province = BUL  }
 			805 = { secede_province = BUL  }
+			799 = { secede_province = BUL  }
 			BOS = { all_core = { secede_province = BOS
 						remove_core = TUR } }
 			KUR = { all_core = { secede_province = KUR

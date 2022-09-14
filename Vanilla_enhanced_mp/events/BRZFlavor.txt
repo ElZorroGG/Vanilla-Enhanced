@@ -145,3 +145,48 @@ province_event = {
 		}		
 	}
 }
+province_event = {
+
+	id = 4630200
+
+	is_triggered_only = yes
+
+	title = "EVTNAME46302"
+	desc = "EVTDESC46302"
+	picture = "Slaves"
+
+	option = {
+		name = "EVTOPTA46302" 
+		2424 = { secede_province = FROM }	
+		2426 = { secede_province = FROM }	
+		2429 = { secede_province = FROM }
+		2430 = { secede_province = FROM }	
+		2428 = { secede_province = FROM }	
+		2431 = { secede_province = FROM }	
+		2432 = { secede_province = FROM }
+		2434 = { secede_province = FROM }
+		2435 = { secede_province = FROM }
+		2436 = { secede_province = FROM }
+		2439 = { secede_province = FROM }
+		2449 = { secede_province = FROM }				
+	}
+	
+	option = {
+		name = "This will not be tolerated" 
+		set_country_flag = brazil_free
+		NET = { release_vassal = THIS 
+		
+        casus_belli = {
+            target = BRZ
+            type = make_puppet
+            months = 12
+        } }
+		NET = { 
+			war = {
+                target = BRZ
+			attacker_goal = {
+				casus_belli = make_puppet }
+			}
+		}
+	}
+}

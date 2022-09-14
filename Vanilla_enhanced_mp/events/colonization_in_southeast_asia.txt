@@ -217,13 +217,7 @@ country_event = {
 
 	fire_only_once = yes
 	
-	trigger = {
-		OR = { is_greater_power = yes
-		is_secondary_power = yes }
-		nationalism_n_imperialism = 1
-		owns = 1387
-		invention = sociology
-	}
+	is_triggered_only = yes
 
 	
 	option = {

@@ -51,11 +51,12 @@ political_decisions = {
 		    tag = TUR 
 			has_country_flag = viva_el_gran_imperio
 			NOT = { 
-			    has_country_flag = por_el_imperio
+			    has_country_flag = por_el_imperio				
 		    }
         }
 		
         allow = {
+			    NOT = { RUS = { has_country_modifier = protector_of_eastern_christendom } }
 		AND = {
 		    OR = { SER = { 
 			in_sphere = TUR

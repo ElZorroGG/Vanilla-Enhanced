@@ -38,6 +38,7 @@ political_decisions = {
 			has_country_flag = hungary_wants_independence
 
 		NOT = { has_country_flag = yay_austria }
+			owns = 641
 		}
 		
 		allow = { 
@@ -48,8 +49,75 @@ political_decisions = {
 		effect = {
 		    624 = { remove_core = HUN }
 		    624 = { add_core = AUS }
+		    2699 = { add_core = AUS }
 			CRO = { all_core = { remove_core = HUN } }
 		set_country_flag = yay_austria 
+		}
+	}
+    Austrian_soil_back2 = {
+	    potential = { 
+			tag = AUS
+			has_country_flag = hungary_wants_independence
+		NOT = { has_country_flag = yay_austria2 }
+		}
+		
+		allow = { 
+			year = 1849
+			war = no
+			NOT = { owns = 641 }
+		}
+	    
+		effect = {
+		    624 = { remove_core = HUN }
+		    624 = { add_core = AUS }
+		    2699 = { add_core = AUS }
+		set_country_flag = yay_austria2 
+		}
+	}
+    Austrian_federation = {
+	    potential = { 
+			tag = AUS
+			has_country_flag = hungary_wants_independence
+			exists = HUN
+			NOT = { has_acountry_flag = yay_austria3  }
+			NOT = { owns = 641 }
+		}
+		
+		allow = { 
+			year = 1850
+			NOT = { year = 1855 }
+			war = no
+			NOT = { owns = 641 }
+		}
+	    
+		effect = {
+		    add_accepted_culture = czech
+		    add_accepted_culture = croat
+		    add_accepted_culture = slovene
+		set_country_flag = yay_austria3 
+		}
+	}
+    Saint_Patrick's_land = {
+	    potential = { 
+			tag = AUS
+			has_country_flag = hungary_wants_independence
+			OR = { HUN = { vassal_of = THIS }
+			HUN = { sphere_of = THIS } }
+			ai = no
+		}
+		
+		allow = { 
+			OR = { HUN = { vassal_of = THIS }
+			HUN = { sphere_of = THIS } }
+		}
+	    
+		effect = {
+		    inherit = HUN
+			add_Accepted_culture = hungarian
+			change_tag = KUK
+			GLO = { all_core = { add_core = KUK } }
+			HUN = { all_core = { add_core = KUK } }
+			set_country_flag = spl
 		}
 	}
 	accept_Pol_or_Ukie = {
@@ -79,7 +147,8 @@ political_decisions = {
 			OR = { 
 			tag = KUK
 			tag = AUS }
-				NOT = { has_country_flag = accept_minority }
+				NOT = { has_country_flag = accept_minority
+			has_country_flag = spl }
 				owns = 771
 			CRO = { exists = no }
 		}
@@ -98,7 +167,8 @@ political_decisions = {
 	Austrian_claims_on_the_balkans = {
 	    potential = { 
 			tag = AUS
-			NOT = { has_country_flag = austrian_balkans }
+			NOT = { has_country_flag = austrian_balkans
+			has_country_flag = spl }
 			owns = 794
 		}
 		
@@ -121,7 +191,8 @@ political_decisions = {
 	Austrian_claims_on_Wallachia = {
 	    potential = { 
 			tag = AUS
-			NOT = { has_country_flag = austrian_balkans_2 }
+			NOT = { has_country_flag = austrian_balkans_2
+			has_country_flag = spl }
 			has_country_flag = austrian_balkans
 			owns = 664
 		}
@@ -138,7 +209,8 @@ political_decisions = {
 	Accept_Serbs = {
 		potential = {
 			tag = KUK 
-				NOT = { has_country_flag = accept_minority_ser }
+				NOT = { has_country_flag = accept_minority_ser
+			has_country_flag = spl }
 				owns = 794
 				owns = 798
 			SER = { exists = no }

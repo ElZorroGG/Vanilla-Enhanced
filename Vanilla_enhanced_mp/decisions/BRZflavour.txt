@@ -1,4 +1,4 @@
-        #Chilean pascua island
+#Brazilian border dfisputes
 political_decisions = {
 	Colombo-Brazilian_border_dispute = {
 		potential = {
@@ -63,6 +63,7 @@ political_decisions = {
         effect = {
             set_country_flag = golden_law_passed
             badboy = -1
+			remove_country_modifier = political_instability_brz
             add_accepted_culture = afro_brazilian
             political_reform = no_slavery
             any_pop = { limit = { type = slaves } consciousness = -5 militancy = -6 }
@@ -142,14 +143,7 @@ political_decisions = {
 					change_region_name = "Cisplatina"
 				}
 			}
-			2344 = { add_cores = THIS
-			}
-			2346 = { add_cores = THIS
-			}
-			2347 = { add_cores = THIS
-			}
-			2345 = { add_cores = THIS
-			}
+			URU = { all_core = { add_core = THIS } }
         }
     }
 	Uruguay = {
@@ -187,5 +181,23 @@ political_decisions = {
             treasury = -5000
             2426 = { change_province_name = "Teresina" }
         }
+    }
+	
+	brazil_1836_setup = {
+        potential = {
+            tag = TUR
+            always = no
+        }
+
+        allow = {
+            tag =  BRZ
+        }
+
+        effect = {
+            add_country_modifier = {
+                name = political_instability_brz
+                duration = -1
+            }
+		}
     }
 }

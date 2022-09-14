@@ -481,13 +481,12 @@ congress_of_vienna
 		}
 	}
 	
-		french_speaking_lands = {
+	french_speaking_lands = {
 		potential = {
 			tag = FRA
 			NOT = {
 				has_country_flag = french_speaking
 			}
-           ai = no
 			has_country_flag = congress_of_vienna
 		}
 		
@@ -497,7 +496,7 @@ congress_of_vienna
 		
 		effect = {
 			set_country_flag = french_speaking
-			BEL_394 = { 
+			BEL_394 = {
 				add_core = FRA
 			}
 			721 = { 
@@ -512,6 +511,9 @@ congress_of_vienna
 			609 = { 
 				add_core = FRA
 			}
+			604 = { 
+				add_core = FRA
+			}
 			396 = { 
 				add_core = FRA
 			}
@@ -524,6 +526,7 @@ congress_of_vienna
 			}
 			prestige = 10
 			badboy = 10
+			add_accepted_culture = french_swiss
 		}
 	}
 	
@@ -1056,6 +1059,7 @@ france_gets_its_final_form_2
 					}
 				}
 			}
+			OR = { 
 			NET = {
 				all_core = {
 					OR = {
@@ -1067,6 +1071,19 @@ france_gets_its_final_form_2
 						}
 					}
 				}
+			}
+			NEE = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
 			}
 		}
 		
@@ -1152,5 +1169,30 @@ france_gets_its_final_form_2
 		ai_will_do = {
 			factor = 1
 		}
-	}	
+	}
+
+    New_France = {
+        potential = {
+		tag = FRA
+			is_greater_power = yes
+			NOT = { has_country_flag = brz_hollands }
+			exists = PTG
+        }
+
+        allow = {
+            PTG = { in_sphere = THIS }
+        }
+
+        effect = {
+            set_country_flag = brz_hollands
+            PTG = { create_vassal = THIS }
+			any_country = { leave_alliance = PTG }
+			USA = { casus_belli = { target = THIS type = release_puppet months = 60 } }
+        
+         
+		}
+        ai_will_do = {
+            factor = 1
+        }
+    }	
 }

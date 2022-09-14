@@ -499,7 +499,7 @@ EVTDESC103102;With the great defat Egypt suffered, They say it is time they end 
 EVTOPTA103102;Egypt will remain, even if it is not in the map.;;;;;;;;;;;;x;
 EVTNAME115000;Event to make $COUNTRY$ not too biggy;;;;;;;;;;;;x;
 EVTDESC115000;This is a event to make $COUNTRY$ not a mess in the future.;;;;;;;;;;;;x;
-EVTOPTA115000;Whatever, wanna keep playing.;;;;;;;;;;;;x;
+EVTOPTA115000;Great Germany with only Austrian cores / Normal Germany.;;;;;;;;;;;;x;
 EVTNAME114020;Purcharse of Palau;;;;;;;;;;;;x;
 EVTDESC114020;A German diplomat has approached us with a deal, they want to buy Palau from us.;;;;;;;;;;;;x;
 EVTNAME114021;Spain accepts the deal;;;;;;;;;;;;x;
@@ -611,3 +611,34 @@ EVTNAME1130110;Posen autonomy;x;
 EVTDESC1130110;With the winds of revolution swaping accross Berlin, the Polish National Comittee demanded a “national reorganization”, removal of Prussian military and turning the administration to Poles. The Poles are seeking for effective autonomy, and we can secede to their demands or destroy the comittee altogether.;x;
 EVTOPTB1130110;Grant them effective and genuine autonomy.;x;
 EVTOPTA1130110;There's no way we allow such thing!;x;
+EVTNAME97500000;Queen Ang Mey is deposed!;x;
+EVTDESC97500000;The Vietnamese, trying to keep their influence in our country, decided to depose our queen to stablish another puppet. Sick of this situation, the Cambodian courtiers are ready to rebel and are willing to appeal to Siam in aim to seek support from them.;x;
+EVT97500000OPTA;Let's ask The Rattanakosin king!;x;
+EVTNAME975010000;The Cambodian revolt;x;
+EVTDESC975010000;Cambodian diplomats have approached us seeking for our support in their rebellion against Vietnamese rule and intervention in their country;x;
+EVT975010000OPTA;Let's support them;x;
+EVT975010000OPTB;Let's not support them;x;
+EVTNAME97502000;Cambodian revolt of $YEAR$;x;
+EVTDESC975020000;Vietnamese intervention in our country has reached a limit when they deposed our queen, now we are willing to seek our independence;x;
+EVT975020000OPTA;And the way forward is to Hanoi;x;
+EVTNAME36980;Persian Occupation of Herat;;;;;;;;;;;;x
+EVTDESC36980;The Shah of Iran has occupied the Emirate of Herat. This is a grave violation of a previous Anglo-Persian treaty that prohibited them from interfering in the interal affairs of Herat. What shall we do?;;;;;;;;;;;;x
+EVTOPTA36980;Liberate Herat.;;;;;;;;;;;;x
+EVTOPTB36980;Do not interfere.;;;;;;;;;;;;x
+EVTNAME36981;Britain Guarantees Herati Independence;;;;;;;;;;;;x
+EVTDESC36981;The British have declared war on us with the goal of restoring the independence of the Emirate of Herat.;;;;;;;;;;;;x
+EVTOPTA36981;English devils!;;;;;;;;;;;;x
+EVTNAME36982;Britain Backs Down;;;;;;;;;;;;x
+EVTDESC36982;The British have renounced their support of Herat and will not interfere with our occupation of the region.;;;;;;;;;;;;x
+EVTOPTA36982;They have come to their senses.;;;;;;;;;;;;x
+EVTNAME36983;Afghan Herat;;;;;;;;;;;;x
+EVTDESC36983;The Emir of Afghanistan has asked us for permission to conquer the Emirate of Herat. It may be in our interest to have Herat under the control of a friendly Afghanistan rather than the Russians or Persians.;;;;;;;;;;;;x
+EVTOPTA36983;Do not interfere.;;;;;;;;;;;;x
+EVTOPTB36983;Do not let them take Herat.;;;;;;;;;;;;x
+EVTNAME36984;Britain Agrees;;;;;;;;;;;;x
+EVTDESC36984;The British foreign office has agreed to not interfere in our annexation of Herat.;;;;;;;;;;;;x
+EVTOPTA36984;Thank Allah.;;;;;;;;;;;;x
+EVTNAME36985;Britain Refuses;;;;;;;;;;;;x
+EVTDESC36985;The British foreign office has not agreed to let us take Herat.;;;;;;;;;;;;x
+EVTOPTA36985;Invade anyway.;;;;;;;;;;;;x
+EVTOPTB36985;Back down.;;;;;;;;;;;;x

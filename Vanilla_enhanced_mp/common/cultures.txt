@@ -22,7 +22,7 @@ germanic = {
 		"von Wrangel" "von Zieten" "zur Lippe" "von Roon" }
 	}
 	south_german = {
-		color = { 50 80 80}
+		color = { 140 110 110 }
 		first_names = { Adolf Albrecht Alexander Alfons Alois Anton Arthur Bernhard Christian
 		Edmund Eduard Engelbert Ernst Erwin Ferdinand Franz Friedrich Gebhard Gerhard Gottfried
 		Günther Gustav Heinrich Hermann Horst Jakob Joachim Johann Joseph
@@ -153,8 +153,8 @@ beneluxian = {
 pan_swiss = {
 	leader = european
 	unit = EuropeanGC
-	swiss = { 
-		color = { 180 40 40}
+	german_swiss = { 
+		color = { 101 63 91 }
 		first_names = { Adolf Alexander Eduard Ernst Franz Hans Johann Josef Konstantin Martin
 		Melchior Robert Rudolf Ulrich Wilhelm Augusto Enrico Flavio Giuseppe Vincenzo
 		Antoine Charles Emmanuel Guillaume Gustave Henri Hugo Louis Marc Paul }
@@ -162,6 +162,33 @@ pan_swiss = {
 		last_names = { Brenner Deucher Funk Haab Herzog Knüsel Munzinger Näff Schneider Siegwart-Müller
 		"von Donatz" "von Salis-Soglio" "von Steiger" "von Tavel" Wille Celio Cotti Fogliardi Motta Zeni
 		Ador Calonder Chaudet Comtesse "de Prangins" Dufour Fornerod Guisan Ruchet Ruchonnet }
+	}
+	french_swiss = {
+		color = { 38 2 156 }
+		first_names = { Achillo Alban Alber Alfons Amedé Andieu Aloi Archambaut Aymar Berot Bérard Bernat Berengar Carle Enric Estève Fidèl 
+		Frederic Filipo Franç Guiraud Huc Ignaç Jan Jacin Laurenç Luis Martin Michele Nicolau Pasqual Pau Pèire Pier Privat Roman 
+		Raimond Rogier Raimond-Rogier Ton Vincenç Vitorio Zeno }
+		
+		last_names = { Amiel Azéma Bec Benet Bézots Dardier Delpuech Ladivèze Gilbert Mistral Claramunt Sala
+		"de Bordeu" Auvernhan Laffont Maury Miquel Montagut Poujade Pujol Vidal Ros Tisseyre
+		d'Usès Nant d'Aurinhac Aramits Challant Guasco Gamba "de Sâteillon" Jotteu Ceppi Becca
+		Colo Carrel Roda Comì Ortèl "de Fenis" "de Saut" "de Cavalhon" "lo Rocoforto" Emperi 
+		Marselhés Alesenc "de Sant Africa" Castrès "de Puylaurenç" Aushés Gasc "lo Cuq" Pèira
+		Valada Bosc Forneiron Faure Avelan Rove Ramond Andrieu "de Lonzac" "de Aurenja" }
+	}
+	italian_swiss = { 
+		color = { 38 195 156 }
+		first_names = { Alessandro Alfonso Ambrogio Amedeo Andrea Angelo Antonio Benito Camillo Carlo
+		Cesare Costanzo Davide Enrico Ettore Fabrizio Faustino Federico Felice Ferdinando
+		Fiorenzo Francesco Gaetano Gennaro Girolamo Giulio Giuseppe Guglielmo Innocenzo Leopoldo
+		Luigi Marco Massimo Matteo Nicola Oreste Paolo Pasquale Pietro Prospero
+		Raffaele Roberto Ruggiero Silvio Simone Tancredi Ugo Umberto Vincenzo Vittorio }
+		
+		last_names = { Acton Albricci Badoglio Baldissera Baratieri Bava-Beccaris Cadorna Cagni Canevaro Capello
+		Caviglia Ceccherini Cialdini Cusani d'Absburgo-Toscana d'Austria-Este Dezza "di Borbone di Parma" "di Robilant" "di Savoia"
+		"di Savoia-Aosta" Emo Fanti Fara Filomarino Garibaldi Giardino Govone "La Màrmora" Mambretti 
+		Menabrea Orengo "Pacoret de Saint Bon" Pallavicino Pecori-Giraldi "Pellion di Persano" Pelloux Perruchetti Pianelli Porro
+		Presbitero Ramorino Ricotti-Magnani Sacchi Saletta Sanna Solari "Thaon di Revel" Vaccari Zupelli }
 	}
 }
 	
@@ -750,7 +777,7 @@ baltic = {
 levantine = {
 	leader = european
 	greek = {
-		color = {200 50 100}
+		color = { 122  180  210 }
 		first_names = { Adamantios Alexandros Anastasios Andreas Antonios Aristidis Athanasios Augustinos Benizelos Charalambos
 		Charilaos Dimitrios Diomidis Eleftherios Emmanouil Epameinontas Evripidis Gennaios Georgios Ilias
 		Ionnis Kitsos Konstantinos Kyriakos Kyriakoulis Leonidas Makarios Markos Mikhael Militiadis

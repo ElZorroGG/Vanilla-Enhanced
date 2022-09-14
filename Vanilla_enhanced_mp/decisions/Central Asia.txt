@@ -1,0 +1,136 @@
+political_decisions = {
+	invade_herat = {
+		picture = herat
+		potential = {
+			tag = PER
+			NOT = {
+				OR = {
+					has_country_flag = invaded_herat
+					owns = 1212
+				}
+			}
+			1212 = { owned_by = MAK }
+		}
+
+		allow = {
+			OR = {
+				civilization_progress = 0.5
+				civilized = yes
+			}
+			war = no
+		}
+
+		effect = {
+			MAK = { all_core = { add_core = PER } }
+			MAK = { all_core = { add_core = AFG } }
+			set_country_flag = invaded_herat
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				OR = {
+					NOT = { year = 1853 }
+					war_exhaustion = 5
+				}
+			}
+		}
+	}
+
+	reclaim_transcaucasia = {
+		picture = caucasus
+		potential = {
+			tag = PER
+			NOT = {
+				has_country_flag = reclaimed_transcaucasia
+			}
+		}
+		allow = {
+			civilized = yes
+			rank = 10
+			romanticism = 1
+		}
+		effect = {
+			set_country_flag = reclaimed_transcaucasia
+			CAU = { all_core = { add_core = AFG } }
+			BLC = { all_core = { add_core = AFG } }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				OR = {
+					relation = { who = RUS value = 100 }
+					in_sphere = RUS
+					alliance_with = RUS
+				}
+			}
+		}
+	}
+	annex_herat = {
+		picture = herat
+		potential = {
+			tag = AFG
+			NOT = { has_country_flag = claimed_herat }
+			MAK = { exists = yes }
+		}
+		allow = {
+			OR = {
+				year = 1863
+				civilization_progress = 0.35
+				civilized = yes
+			}
+			war = no
+			MAK = { war = no }
+			neighbour = MAK
+			OR = {
+				MAK = { in_sphere = ENG }
+				PER = { has_country_flag = invaded_herat }
+			}
+		}
+		effect = {
+			set_country_flag = claimed_herat
+			MAK = { all_core = { add_core = THIS } }
+			ENG = { country_event = { id = 36983 days = 0 } }
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				OR = {
+					NOT = { year = 1856 }
+					war_exhaustion = 5
+				}
+			}
+		}
+	}
+
+	claim_herat = {
+		picture = herat
+		potential = {
+			tag = AFG
+			NOT = { has_country_flag = claimed_herat }
+			MAK = { exists = no }
+		}
+		allow = {
+			OR = {
+				year = 1863
+				civilization_progress = 0.35
+				civilized = yes
+				owns = 1212
+			}
+		}
+		effect = {
+			set_country_flag = claimed_herat
+			MAK = { all_core = { add_core = THIS } }
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { year = 1863 }
+			}
+		}
+	}
+}

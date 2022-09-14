@@ -1,6 +1,6 @@
-owner = PRU
+owner = POS
 
-controller = PRU
+controller = POS
 
 add_core = PRU
 

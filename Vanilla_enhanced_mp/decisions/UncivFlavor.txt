@@ -507,4 +507,26 @@ political_decisions = {
             set_country_flag = champassak_integrated
         }
     }
+	Depose_queen_Ang_Mei = {
+        picture = form_laos
+        potential = {
+            tag = DAI
+            CAM = { exists = yes vassal_of = THIS }
+            NOT = {
+                has_country_flag = deposed_queen
+            }
+        }
+        allow = {
+            war = no
+            civilized = no
+			year = 1840
+			CAM = { exists = yes vassal_of = THIS }
+        }
+
+        effect = {
+            badboy = 1
+            CAM = { country_event = 97500000 }
+            set_country_flag = deposed_queen
+        }
+    }
 }

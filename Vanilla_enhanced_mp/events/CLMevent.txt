@@ -43,6 +43,7 @@ country_event = {
 		2532 = { secede_province = BRZ }
 		2532 = { remove_core = VNZ }
 		2532 = { add_core = BRZ }
+        2532 = { change_province_name = "Forte Sao Joaquim" }
 		ai_chance = {
 			factor = 100
 		}

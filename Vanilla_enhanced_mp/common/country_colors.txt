@@ -1,4 +1,61 @@
 # Country unit colors.
+
+ # Sudan
+SUD = {
+    color1= { 252 210 41} 
+    color2= { 122 182 242 }
+    color3= { 255 255 255  }
+}
+
+ # Taiwan
+TAI = {
+    color1= { 252 210 41} 
+    color2= { 122 182 242 }
+    color3= { 255 255 255  }
+}
+
+ # U.K. The Netherlands
+NEE = {
+    color1= { 252 210 41} 
+    color2= { 122 182 242 }
+    color3= { 255 255 255  }
+}
+
+ # Calabar
+CLA = {
+    color1= { 252 210 41} 
+    color2= { 122 182 242 }
+    color3= { 255 255 255  }
+}
+
+ # Aro
+ARO = {
+    color1= { 252 210 41} 
+    color2= { 122 182 242 }
+    color3= { 255 255 255  }
+}
+
+# Trarza
+TRZ = {
+    color1= { 252 210 41} 
+    color2= { 122 182 242 }
+    color3= { 255 255 255  }
+}
+
+ # Gabu
+GBU = {
+    color1= { 252 210 41} 
+    color2= { 122 182 242 }
+    color3= { 255 255 255  }
+}
+
+ # Borgu
+BRG = {
+    color1= { 252 210 41} 
+    color2= { 122 182 242 }
+    color3= { 255 255 255  }
+}
+
  # Baluchistan
 BLC = {
     color1= { 252 210 41} 

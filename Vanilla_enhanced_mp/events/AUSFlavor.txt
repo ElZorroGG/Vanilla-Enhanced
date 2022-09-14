@@ -103,7 +103,7 @@ country_event = {
 	
 	trigger = {
 		tag = AUS
-		year = 1848
+		has_country_modifier = springtime_of_nations
 		NOT = { year = 1850 
 			has_country_flag = hungarian_revolution_has_happened
 		}
@@ -195,7 +195,7 @@ country_event = {
 	
 	trigger = {
 		tag = AUS
-		year = 1848
+		has_country_modifier = springtime_of_nations
 		NOT = { year = 1850 
 			has_country_flag = venetian_revolution_has_happened
 		}
@@ -289,7 +289,7 @@ country_event = {
 	
 	trigger = {
 		tag = AUS
-		year = 1848
+		has_country_modifier = springtime_of_nations
 		NOT = { year = 1850 
 			has_country_flag = lombard_revolution_has_happened
 		}

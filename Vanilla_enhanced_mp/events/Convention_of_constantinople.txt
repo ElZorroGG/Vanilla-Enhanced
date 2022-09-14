@@ -60,6 +60,7 @@ country_event = {
 		TUR_788 = {
 			secede_province = BOS
 		}
+						ROM = { country_event = 100010 }
 		CYP = { all_core = { secede_province = FROM
 					remove_core = TUR } }
 		TUR_674 = { remove_core = TUR } # Dobrudja
@@ -88,7 +89,7 @@ country_event = {
 		}
 
 		ai_chance = {
-			factor = 100
+			factor = 40
 	}
 	
 	option = {
@@ -112,7 +113,7 @@ country_event = {
 				months = 60
 		}	
 		ai_chance = {
-			factor = 0
+			factor = 60
 		}
 	}
 }
@@ -201,6 +202,7 @@ country_event = {
 	trigger = {
 		tag = BUL
 		exists = BUL
+		BUL = { vassal_of = TUR }
 		NOT = { 
 			has_global_flag = bulgaria_independent
 			}
@@ -239,7 +241,7 @@ country_event = {
 			}
 
 		ai_chance = {
-			factor = 0.60 }
+			factor = 0.40 }
 	}
 	
 	option = {
@@ -248,7 +250,7 @@ country_event = {
 			country_event = { id=100004 days = 5 }
 		}
 		ai_chance = {
-			factor = 0.40
+			factor = 0.60
 		}
 	}
 }
@@ -262,9 +264,10 @@ country_event = {
 	
 	option = {
 		name = "EVTOPTA100008"
-		release_vassal = MOL
-		release_vassal = WAL
 		release_vassal = ROM
+		ROM = { 
+		676 = { secede_province = RUS }
+		2701 = { secede_province = RUS } }
 		any_owned = {
 			limit = {
 					owned_by = TUR }
@@ -274,6 +277,7 @@ country_event = {
 						remove_core = TUR } }
 			BUL = { all_core = { secede_province = BUL
 						remove_core = TUR } }
+			release_vassal = BUL
 			BUL = { capital = 809 }
 
 			ALB = { all_core = { secede_province = ALB
@@ -284,7 +288,8 @@ country_event = {
 			GRE = { all_core = { secede_province = GRE
 						remove_core = TUR } }
 			ROM = { all_core = { secede_province = ROM 
-						remove_core = TUR } } }
+						remove_core = TUR }  } }
+			ROM = { country_event = 100010 }
 		AUS = {
 		diplomatic_influence = {
 			who = BOS
@@ -297,10 +302,9 @@ country_event = {
 			value = 400
 				}
 			}
-		}
 
 		ai_chance = {
-			factor = 100
+			factor = 30 }
 	}
 	
 	option = {
@@ -309,7 +313,7 @@ country_event = {
 			country_event = { id=100009 days=0 }
 		}	
 		ai_chance = {
-			factor = 0
+			factor = 70
 		}
 	}
 }
@@ -324,14 +328,13 @@ country_event = {
 	
 	trigger = { tag = RUS
 			TUR = { NOT = { is_greater_power = yes } } 
-			OR = { AND = { TUR = { in_sphere = RUS } year = 1855 }
-					year = 1878 } }		
+			OR = { AND = { TUR = { in_sphere = RUS } year = 1865 }
+					year = 1878 } 
+			NOT = { has_country_flag = treaty_of_paris_russia } }		
 	option = {
 		name = "EVTOPTB100001"
-			any_country = { limit = {  rank = 1 } 
-				country_event = { id=100003 days = 5 }
-			}
-	}
+		ENG = { country_event = { id = 100003 } } 
+		}
 }
 country_event = {
 	id = 118001
@@ -356,6 +359,8 @@ country_event = {
 			828 = { secede_province = BUL }
 			807 = { secede_province = BUL  }
 			806 = { secede_province = BUL  }
+			675 = { secede_province = BUL  }
+			799 = { secede_province = BUL  }
 			805 = { secede_province = BUL  }
 			BOS = { all_core = { secede_province = BOS
 						remove_core = TUR } }
@@ -375,7 +380,10 @@ country_event = {
 			ROM = { all_core = { secede_province = ROM 
 						remove_core = TUR } }
 			860 = { secede_province = RUS  }
-			861 = { secede_province = RUS  } }	
+			861 = { secede_province = RUS  } }
+			MOL = { all_core = { remove_core = RUS } }	
+			RUS = { country_event = 118002 }	
+			
 		AUS = {
 		diplomatic_influence = {
 			who = BOS
@@ -385,12 +393,156 @@ country_event = {
 		KUK = {
 		diplomatic_influence = {
 			who = BOS
-			value = 400
+			value = 400 }
 				}
-			}
 		}
 
 		ai_chance = {
 			factor = 100
+	}
+}
+	country_event = {
+	id = 118002
+	title = "The fate of the balkans"
+	desc = "After the crushing defeat of the Ottoman Empire, we can now choose what will happen to the balkans, however, the other great powers of Europe might try to stop us from destroying the concert of Europe."
+	picture = "constantinople_conference"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "They can just suck it"
+		create_vassal = ROM
+		create_vassal = BUL		
+		diplomatic_influence = {
+			who = EGY
+			value = 400
+				}
+		diplomatic_influence = {
+			who = SER
+			value = 400
+				}
+		diplomatic_influence = {
+			who = GRE
+			value = 400
+				}		
+		diplomatic_influence = {
+			who = ALB
+			value = 400
+				}
+		any_country = {
+                limit = { is_greater_power = yes capital_scope = {continent = europe } }
+                        casus_belli = {
+            target = RUS
+            type = cut_down_to_size
+            months = 60
+        } }
+		BUL = { set_country_flag = search_for_independence }
+
+		ai_chance = {
+			factor = 0
+	} }
+		option = {
+		name = "Having content Austria is enough"
+		create_vassal = BUL	
+		AUS = { diplomatic_influence = {
+			who = ROM
+			value = 400
+				}
+		set_country_falg = happy_austria }
+		KUK = { diplomatic_influence = {
+			who = ROM
+			value = 400
+				}
+		set_country_flag = happy_austria }
+		diplomatic_influence = {
+			who = SER
+			value = 400
+				}
+		diplomatic_influence = {
+			who = GRE
+			value = 400
+				}		
+		diplomatic_influence = {
+			who = ALB
+			value = 400
+				}
+		relations = {
+			who = AUS
+			value = 200
+				}
+		BUL = { set_country_flag = search_for_independence }
+		any_country = {
+                limit = { is_greater_power = yes capital_scope = {continent = europe } NOT = { tag = AUS } }
+                        casus_belli = {
+            target = RUS
+            type = cut_down_to_size
+            months = 60
+        } }
+
+		ai_chance = {
+			factor = 50
+	} }
+	option = {
+		name = "Make all concessions possible."
+		create_vassal = BUL	
+		KUK = { diplomatic_influence = {
+			who = ROM
+			value = 400
+				}
+		set_country_flag = happy_austria }
+		AUS = { diplomatic_influence = {
+			who = ROM
+			value = 400
+				}
+		set_country_flag = happy_austria }
+		676 = { secede_province = ROM }
+		2701 = { secede_province = ROM }
+		diplomatic_influence = {
+			who = SER
+			value = 400
+				}
+		ENG = { diplomatic_influence = {
+			who = GRE
+			value = 400
+				} }	
+		FRA = { diplomatic_influence = {
+			who = ALB
+			value = 400
+				} }
+		CPL = { all_core = { secede_province = CPL } }
+		GLO = { all_core = { secede_province = CPL } }
+		
+		release_vassal = FIN
+
+		ai_chance = {
+			factor = 50 }
+	}
+}
+
+country_event = {
+	id = 100010
+	title = "Russian demands"
+	desc = "Now that we have a larger coastline due to Russian intervention in the Balkans, they demand back the par of Bessarabia they used to control."
+	picture = "constantinople_conference"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA100008"
+		release_vassal = ROM
+		676 = { secede_province = RUS }
+		2701 = { secede_province = RUS }
+		ai_chance = {
+			factor = 100
+		} }	
+		
+	option = {
+		name = "EVTOPTB100008"
+		676 = { add_core = RUS }
+		678 = { add_core = RUS }
+		2701 = { add_core = RUS }
+		ai_chance = {
+			factor = 0
+		}
 	}
 }

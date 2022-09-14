@@ -1,5 +1,7 @@
-owner = PRU
-controller = PRU
+owner = POS
+
+controller = POS
+
 add_core = PRU
 
 add_core = GER

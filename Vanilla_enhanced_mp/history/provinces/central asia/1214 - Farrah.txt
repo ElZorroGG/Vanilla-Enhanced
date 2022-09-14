@@ -1,5 +1,5 @@
-owner = AFG
-controller = AFG
-add_core = AFG
+owner = MAK
+controller = MAK
+add_core = MAK
 trade_goods = cotton
 life_rating = 35

@@ -3,9 +3,11 @@ political_decisions = {
 		potential = {
 			NOT = { tag = HRE
 				tag = KUK
-				tag = BVO }
+				tag = BVO 
+				has_country_modifier = neutrality_modifier }
 			is_greater_power = yes
-			primary_culture = south_german
+			OR = { primary_culture = south_german
+			primary_culture = german_swiss }
 			NOT = {
 				exists = SGF
 				exists = GER
@@ -214,6 +216,7 @@ political_decisions = {
 					tag = ECU
 					tag = CLM
 					tag = VNZ
+					tag = ITM
 				}
 			}
 		}
@@ -263,11 +266,11 @@ political_decisions = {
 		potential = {
 			NOT = { tag = HRE
 				tag = KUK }
-			is_culture_group = germanic
+			OR = { is_culture_group = germanic
+			primary_culture = german_swiss }
 			NOT = {
-				exists = GER
+				exists = GER }
 			}
-		}
 		
 		allow = {
 			is_greater_power = yes
@@ -296,61 +299,69 @@ political_decisions = {
 					in_sphere = THIS
 				}
 				country_event = { id=111010 days=0 } }
-		any_owned = {
-			limit = {
-				is_core = HUN
-				NOT = {
-					province_id = 774
-					province_id = 773
-					province_id = 772
-					province_id = 775
-					province_id = 771
-					province_id = 775
-					province_id = 776
-					province_id = 777
-					province_id = 779
-					province_id = 793
-				}
 			}
-			secede_province = HUN
-		}
-		any_owned = {
-			limit = {
-				is_core = GLO
-				NOT = {
-					province_id = 2584
-				}
-			}
-			secede_province = GLO
-		}
-		any_owned = {
-			limit = {
-				is_core = BKN
-			}
-			secede_province = BKN
-		}
-		any_owned = {
-			limit = {
-				is_core = RSM
-			}
-			secede_province = RSM
-		}
-		any_owned = {
-			limit = {
-				is_core = CRO
-			}
-			secede_province = CRO
-		}
-		any_owned = {
-			limit = {
-				is_core = MON
-			}
-			secede_province = MON
-		}
 		ai_will_do = {
-			factor = 1 }
+			factor = 1 
 		}
 	}
+	
+	form_germany_with_switzerland = {
+		news = yes
+		news_desc_long = "form_germany_NEWS_LONG"
+		news_desc_medium = "form_germany_NEWS_MEDIUM"
+		news_desc_short = "form_germany_NEWS_SHORT"
+		potential = {
+			NOT = { tag = HRE
+				tag = KUK }
+			OR = { is_culture_group = germanic
+			primary_culture = german_swiss }
+			NOT = {
+				exists = GER
+			}
+			NOT = { SWI = { has_country_modifier = neutrality_modifier } }
+		SWI = { in_sphere = THIS }
+		AUS = { in_sphere = THIS }
+		}
+		
+		allow = {
+			is_greater_power = yes
+			prestige = 45
+			war = no
+			GER = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						owner = {
+							in_sphere = THIS
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 20
+			change_tag = GER
+			add_accepted_culture = north_german
+			add_accepted_culture = south_german
+			add_accepted_culture = german_swiss
+			inherit = SWI
+			any_country = {
+				limit = {
+					is_culture_group = germanic
+					in_sphere = THIS
+				}
+				country_event = { id=111010 days=0 } }
+		ai_will_do = {
+			factor = 1 }
+			609 = { secede_province = FRA add_core = FRA }
+			607 = { secede_province = FRA add_core = FRA }
+			608 = { secede_province = FRA add_core = FRA }
+			604 = { secede_province = FRA add_core = FRA }
+			FRA = { add_accepted_Culture = french_swiss }
+		}
+	}
+	
 	form_italy = {
 		news = yes
 		news_desc_long = "form_italy_NEWS_LONG"
@@ -909,6 +920,8 @@ unite_moldavia_wallachia = {
 				}
 				country_event = { id=111011 days=0 } }
 				GER = { all_core = { add_core = THIS } }
+				release_vassal = GLO
+				release_vassal = BKN
 		ai_will_do = {
 			factor = 1 }
 		}

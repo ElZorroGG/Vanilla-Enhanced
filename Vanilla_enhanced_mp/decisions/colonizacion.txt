@@ -293,8 +293,12 @@ political_decisions = {
 				neighbour = DND
 				neighbour = KAA
 				neighbour = GEL
-				neighbour =  MAJ 
-				neighbour = BLC } } 
+				neighbour =  MAJ
+				neighbour =  BRG
+				neighbour =  GBU
+				neighbour =  TRZ
+				neighbour =  ARO
+				neighbour =  CLA } } 
 		effect = {
 			add_country_modifier = { name = monthly_timer duration = 400 }
 			any_country = { limit = { AND = { neighbour = THIS OR = {
@@ -318,7 +322,11 @@ political_decisions = {
 				tag = KAA
 				tag = GEL
 				tag = MAJ
-				tag = BLC } } } country_event = 117001 days = 0 }
+				tag =  BRG
+				tag =  GBU
+				tag =  TRZ
+				tag =  ARO
+				tag =  CLA } } } country_event = 117001 days = 0 }
 		}
 	}
 	Annexation_of_Yoruba_states = {
@@ -344,6 +352,8 @@ political_decisions = {
 			inherit = OYO
 			inherit = WRI
 			inherit = BEN
+			inherit = CLA
+			inherit = ARO
 			prestige = 4
 			badboy = 4
 		}

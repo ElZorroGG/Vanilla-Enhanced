@@ -1,4 +1,4 @@
-owner = NET
-controller = NET
+owner = NEE
+controller = NEE
 trade_goods = grain
 life_rating = 30

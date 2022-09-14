@@ -1169,8 +1169,7 @@ country_event = {
 	
 	trigger = {
 		tag = FRA
-		year = 1847
-        average_militancy = 4
+		year = 1848
 	}
 
 	

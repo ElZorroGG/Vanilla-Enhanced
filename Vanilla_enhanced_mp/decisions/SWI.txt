@@ -98,15 +98,16 @@ political_decisions = {
     declare_neutrality = {
         potential = {
             tag = SWI
+            has_country_flag = abandoned_neutrality
             NOT = {
                 has_country_modifier = neutrality_modifier
-                has_country_flag = abandoned_neutrality
                 has_country_flag = neutrality_violated
             }
         }
         allow = {
 		any_owned_province = { is_core = THIS }
             NOT = { badboy = 1 }
+			war_policy = pacifism
         }
 
         effect = {
@@ -168,4 +169,26 @@ political_decisions = {
             }
         }
     }
+    abandon_neutrality = {
+        potential = {
+            tag = SWI
+			ai = no
+            NOT = {
+                has_country_flag = abandoned_neutrality
+            }
+        }
+        allow = {
+		any_owned_province = { is_core = THIS }
+            NOT = { badboy = 1 }
+        }
+
+        effect = {
+            remove_country_modifier = neutrality_modifier
+			set_country_flag = abandoned_neutrality
+        }
+
+        ai_will_do = {
+            factor = 1
+		}
+	}
 }

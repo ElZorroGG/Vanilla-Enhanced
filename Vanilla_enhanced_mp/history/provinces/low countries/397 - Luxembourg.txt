@@ -5,7 +5,7 @@ controller = BEL
 
 add_core = LUX
 add_core = BEL
-add_core = NET
+add_core = NEE
 
 trade_goods = iron
 

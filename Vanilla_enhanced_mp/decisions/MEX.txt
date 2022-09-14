@@ -12,7 +12,7 @@ political_decisions = {
 			OR = { 
                 2172 = { controlled_by = USA }
 				AND = { 
-				war_score = 70
+				MEX = { national_provinces_occupied = 0.25 }
 				war_with = MEX }
                 AND = {
                     is_sphere_leader_of = MEX

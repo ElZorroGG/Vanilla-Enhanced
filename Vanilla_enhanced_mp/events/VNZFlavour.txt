@@ -30,7 +30,7 @@ country_event = {
 
     option = {
         name = "EVT112861OPTA" #ask gp's
-                FRA = { country_event =  112862 }
+                USA = { country_event =  112862 }
 	}
 }
 country_event = {
@@ -68,7 +68,7 @@ country_event = {
 
 	trigger = {
 			tag = ENG
-			FRA = { has_country_flag = venezuelan_soil }
+			USA = { has_country_flag = venezuelan_soil }
 			}
 
 	mean_time_to_happen = { months = 1 }
@@ -112,6 +112,7 @@ country_event = {
         political_reform = state_controlled
         political_reform = harassment
         ruling_party_ideology = conservative
+		set_country_flag = cipriano
 
         any_owned = {
             limit = {
@@ -199,5 +200,111 @@ country_event = {
             modifier = { upper_house = { ideology = liberal value = 0.7 } factor = 60}
             modifier = { upper_house = { ideology = liberal value = 0.8 } factor = 70}
         }
+    }
+}
+#Venezuelan blockade of 1901
+country_event = {
+    id = 1128600
+    title = "Venezuelan debt"
+    desc = "With the constant revolts in Venezuelan soil, it has accumulated a great debt, and with this government not willing to pay them back, the Great Powers might have to force their will through gunboat diplomacy."
+    picture = "venezuela"
+	
+	fire_only_once = yes
+
+    trigger = { tag = VNZ
+		exists = VNZ
+		exists = GER
+		year = 1901
+        has_country_flag = cipriano }
+
+	option = {
+        name = "Venezuela is willing to pay" #Vote for them
+		GER = { country_event = 11286100 }
+		money = -10000
+	}
+	
+	option = {
+        name = "Venezuela is a sovereign country!" #Vote for them
+		GER = { country_event = 11286200 }
+	}
+}
+
+
+
+country_event = {
+    id = 11286100
+    title = "Venezuela pays its debt"
+    desc = "With the inminent intervention in their territory, Venezuela decided to complay"
+    picture = "venezuela"
+
+	is_triggered_only = yes
+
+    option = {
+        name = "yay" #ask gp's
+        money = 10000
+	}
+}
+country_event = {
+    id = 11286200
+    title = "Venezuelan refusal"
+    desc = "Venezuela is not willing to pay its debt, so we can force them into paying thorugh gunboat diplomacy"
+    picture = "venezuela"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "cool then" #Vote for them
+		set_country_flag = venezuelan_soil
+		USA = { country_event = 11286300 }
+        ai_chance = {
+            factor = 0
+        }
+    }
+}
+
+country_event = {
+    id = 11286300
+    title = "American intervention"
+    desc = "Venezuelan diplomats have approched us trying to request protection from the European powers and their inmiment invasion of the country, what should we do?"
+    picture = "venezuela"
+
+	is_triggered_only = yes
+
+
+	fire_only_once = yes
+
+    option = {
+        name = "Secede Margarita" #Vote for them
+		        VNZ = { country_event = 11286301 }
+    }
+	option = {
+        name = "Venezuela can deal with this by itself" #Vote for them
+		         GER = { casus_belli = {
+            target = VNZ
+            type = demand_reperations
+            months = 12 }
+        }
+    }
+	option = {
+        name = "Organise their debt" #Vote for them
+		        VNZ = { money = -10000 }
+				GER = { money = 10000 }
+    }
+}
+
+country_event = {
+    id = 11286301
+    title = "American intervention"
+    desc = "Venezuela has been forced to secede Margarita"
+    picture = "venezuela"
+
+	is_triggered_only = yes
+
+
+	fire_only_once = yes
+
+    option = {
+        name = "Secede Margarita" #Vote for them
+		        2591 = { secede_province = GER }
     }
 }

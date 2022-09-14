@@ -6,7 +6,8 @@ political_decisions = {
         potential = {
             NOT = { has_country_modifier = small_country_draft
             	    has_country_flag = cpl_draft_happened }
-            tag = CPL
+            OR = { tag = CPL
+					tag = POL }
         }
 
         allow = {
@@ -387,6 +388,19 @@ polandis_gets_its_final_form
 						tag = HUN
 						tag = ROM
 						tag = YUG
+						tag = SMO
+						tag = WAL
+						tag = MOL
+						tag = KRA
+						tag = BKN
+						tag = BOS
+						tag = UKR
+						tag = GLO
+						tag = BYE
+						tag = BOH
+						tag = SLO
+						tag = SLV
+						tag = RUT
  
 					}
 					in_sphere = THIS

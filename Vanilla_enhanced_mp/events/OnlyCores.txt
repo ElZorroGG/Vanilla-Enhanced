@@ -111,7 +111,7 @@ country_event = {
 
     is_triggered_only = yes
 
-    option = {
+   option = {
         name = "EVT2660OPTA"
         any_owned = {
             limit = {
@@ -121,6 +121,17 @@ country_event = {
                 NOT = { province_id = 1481 }
                 is_core = FROM
                 NOT = { is_core = THIS }
+                OR = {
+                    NOT = { province_control_days = 30 }
+                    AND = {
+                        has_pop_type = labourers
+                        unemployment_by_type = { value = 1 type = labourers }
+                    }
+                    AND = {
+                        has_pop_type = farmers
+                        unemployment_by_type = { value = 1 type = farmers }
+                    }
+                }
             }
             state_scope = {
                 any_owned = {
@@ -139,6 +150,7 @@ country_event = {
         name = "EVT2660OPTB"
         ai_chance = { factor = 0 }
     }
+}
 }
 country_event = {
     id = 265000
