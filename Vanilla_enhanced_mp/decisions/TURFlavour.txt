@@ -264,6 +264,7 @@ political_decisions = {
 		potential = {
 			tag = TUR
 				NOT = { has_country_flag = alonosi }
+				owns = 913
 		}
 		
 		allow = {
@@ -280,8 +281,8 @@ political_decisions = {
 		potential = {
 			tag = TUR
 				NOT = { has_country_flag = alonosi2 }
-			RSM = { exists = yes
-				war = no }
+				owns = 913
+				owns = 1748
 		}
 		
 		allow = {

@@ -495,9 +495,10 @@ german_new_guinea = {
 		}
 	}
 
-claim_togo = {
-    picture = map_togo
+claim_togoland = {
+    picture = africa2
     potential = {
+		tag = GER
         capital_scope = { continent = europe }
         year = 1850
         NOT = { tag = RUS }
@@ -508,7 +509,8 @@ claim_togo = {
 
     allow = {
         total_pops = 2000000
-        OR = {
+		OR = { 
+        AND = { OR = {
             is_greater_power = yes
             is_secondary_power = yes
         }
@@ -531,7 +533,10 @@ claim_togo = {
                 blue_and_brown_water_schools = 1
                 military_logistics = 1
             }
-        }
+        } }
+		AND = { 
+		year = 1872 }
+		}
     }
 
     effect = {
@@ -553,6 +558,7 @@ claim_togo = {
     ai_will_do = { factor = 1 }
 }
 	prussian_warsaw = {
+    picture = radom
 		potential = {
 		OR = { 
 			tag = PRU
@@ -600,6 +606,7 @@ claim_togo = {
 		}
 		
 	prussian_coup_d'etat = {
+		picture = polanddd
 		potential = {
 		OR = { 
 			tag = PRU
@@ -690,6 +697,7 @@ claim_togo = {
 			}
 		}
 	austrian_radom = {
+    picture = radom
 		potential = {
 			tag = AUS
 			NOT = {
@@ -721,6 +729,7 @@ claim_togo = {
 		}
 	}
 	Purcharse_of_Palau = {
+	picture = palau
 		potential = {
 			tag = GER
 			NOT = { has_country_flag = treaty_of_palau }
@@ -744,6 +753,7 @@ claim_togo = {
 		}
 	}
 	Septemberprogramm = {
+		picture = september
 		potential = {
 			tag = GER
 			NOT = { has_country_flag = Septemberprogramm }
@@ -774,6 +784,7 @@ claim_togo = {
 		}
 	}
 	Octoberprogramm = {
+		picture = september
 		potential = {
 			tag = GER
 			has_country_flag = Septemberprogramm
@@ -802,6 +813,7 @@ claim_togo = {
 		}
 	}
 	Drang_nach_Osten = {
+		picture = balticstates
 		potential = {
 		OR = {
 			tag = NGF
@@ -830,6 +842,7 @@ claim_togo = {
 	}
 	
 	the_bohemian_question = {
+	picture = boques
 		potential = {
 			tag = GER 
 			owns = 625 

@@ -91,4 +91,98 @@ political_decisions = {
         }
         ai_will_do = { factor = 1 }
     }
+    Lithuanian_independence = {
+        picture = balticstates
+        potential = {
+                tag = LIT
+				NOT = { has_country_flag = posen_free2 }
+        }
+
+        allow = {
+		war = no
+        owns = 948
+		year = 1855
+		NOT = { year = 1870 }	
+        }
+
+        effect = {
+		set_country_flag = posen_free2
+		LIT = { all_core = { remove_core = RUS } }
+        }
+    }
+	
+    Become_Poland_Lithuania = {
+        picture = balticstates
+        potential = {
+                OR = { tag = LIT
+				tag = POL
+				tag = CPL }
+				NOT = { has_country_flag = posen_free3 }
+				LIT = { owns = 361 
+				has_country_flag = posen_free2 }
+				ai = no
+        }
+
+        allow = {
+        CPL = { war = no }
+		LIT = { war = no }
+        }
+
+        effect = {
+		set_country_flag = posen_free3
+		
+			any_country = {
+				limit = {
+					OR = {
+						tag = POL
+						tag = LIT
+						tag = CPL 
+					}
+					NOT = {
+						tag = THIS
+					}
+				}
+				annex_to = THIS
+			}
+			change_tag = PLC
+        }
+    }
+	
+    Become_Poland_Lithuania2 = {
+        picture = balticstates
+        potential = {
+                OR = { tag = LIT
+				tag = POL
+				tag = CPL }
+				NOT = { has_country_flag = posen_free3 }
+				LIT = { owns = 361 
+				has_country_flag = posen_free2 }
+				ai = yes
+        }
+
+        allow = {
+        CPL = { war = no ai = yes}
+        POL = { war = no ai = yes}
+		LIT = { war = no ai = yes}
+        }
+
+        effect = {
+		set_country_flag = posen_free3
+		
+			any_country = {
+				limit = {
+					OR = {
+						tag = POL
+						tag = LIT
+						tag = CPL 
+					}
+					NOT = {
+						tag = THIS
+					}
+				}
+				annex_to = THIS
+			}
+			change_tag = PLC
+        }
+    }
 }

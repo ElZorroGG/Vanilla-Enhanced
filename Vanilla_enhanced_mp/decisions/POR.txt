@@ -1,6 +1,7 @@
 political_decisions = {
 #Angola	
 	angola_is_ours = {
+	picture = africa2
 		potential = {
 			THIS = {
 				owns = 2001
@@ -35,6 +36,7 @@ political_decisions = {
 	}
 	#Mozambique
 	mozambique = {
+	picture = africa2
 		potential = {
 			THIS = {
 				owns = 2060
@@ -59,6 +61,7 @@ political_decisions = {
 	}
 	#Lorenzo Marques
 	Lorenzo_marques = {
+	picture = africa2
 		potential = {
 			THIS = {
 				owns = 2056
@@ -84,6 +87,7 @@ political_decisions = {
 	}
 #Guinea_bissau
 	guinea_is_ours = {
+	picture = africa2
 		potential = {
 			THIS = {
 				owns = 1877

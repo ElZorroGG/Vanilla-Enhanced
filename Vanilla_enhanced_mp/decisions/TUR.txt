@@ -167,9 +167,35 @@ political_decisions = {
 			1740 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }	
 			1738 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }
 			1739 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }
-			2585 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }
-			1741 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }
-			1743 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }		
+			2585 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }		
+			prestige = 10
+		}
+	}
+#The Lybian desert is ours
+	The_Lybian_desert_for_italy = {
+		potential = {
+		tag = ITA
+			THIS = {
+				owns = 1732
+				owns = 1737
+				}
+			NOT = {
+				has_country_flag = lybia_is_ours2
+			}
+		}
+		
+		allow = {
+			year = 1910
+			THIS = {
+				owns = 1732
+				owns = 1737
+			}
+		}
+		
+		effect = {
+			set_country_flag = lybia_is_ours2
+			1741 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }	
+			1743 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }			
 			prestige = 10
 		}
 	}

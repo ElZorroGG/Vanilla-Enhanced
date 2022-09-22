@@ -425,7 +425,7 @@ political_decisions = {
 		}
 	}
 	
-	Purcharse_of_the_gold_coast{
+	Purcharse_of_the_gold_coast = {
 		potential = {
 			tag = ENG
 			NOT = { has_country_flag = treaty_of_gold }

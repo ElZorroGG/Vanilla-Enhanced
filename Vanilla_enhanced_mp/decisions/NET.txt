@@ -179,6 +179,7 @@ political_decisions = {
     }
 	
     die_kaap_is_weer_Hollands = {
+	picture = south_africa
         potential = {
 		OR = { 
             tag = BNX

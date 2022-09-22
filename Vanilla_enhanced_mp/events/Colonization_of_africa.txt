@@ -149,7 +149,7 @@ country_event = {
 		CNG = {
 			vassal_of = THIS
 		}
-		year = 1872
+		year = 1882
             	has_global_flag = called_congo_conference
 	}
 	option = {

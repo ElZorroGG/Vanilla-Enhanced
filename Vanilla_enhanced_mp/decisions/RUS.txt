@@ -278,7 +278,8 @@ political_decisions = {
         }
     }
     names_of_the_revolution = {
-        picture = names_of_the_rev
+       
+        picture = petrograd_city
         potential = {
             tag = RUS
             government = proletarian_dictatorship
@@ -320,7 +321,8 @@ political_decisions = {
     }
 
     remove_names_of_the_revolution = {
-        picture = names_of_the_rev
+       
+        picture = petrograd_city
         potential = {
             tag = RUS
             NOT = { government = proletarian_dictatorship }
@@ -395,7 +397,7 @@ political_decisions = {
     }
 
     remove_names_of_the_revolution_ukraine = {
-        picture = names_of_the_rev
+        picture = petrograd_city
         potential = {
             NOT = { government = proletarian_dictatorship }
             has_global_flag = names_of_the_revolution_ukraine
@@ -584,6 +586,7 @@ political_decisions = {
         }
     }
 	centralisation_of_the_government = {
+		picture = balticstates
 		potential = {
 			tag = RUS
 			NOT = { has_country_flag = annexation_of_them_both }
@@ -615,6 +618,7 @@ political_decisions = {
 		}
 	}
 	centralisation_of_the_government_2= {
+		picture = balticstates
 		potential = {
 			tag = RUS
 			NOT = { has_country_flag = annexation_of_them_both_2 }
@@ -649,6 +653,7 @@ political_decisions = {
 		}
 	}
 	Caucasian_lands = {
+	picture = caucasus
 		potential = {
 			tag = RUS
 			NOT = { has_country_flag = annexation_of_them_both_21 }

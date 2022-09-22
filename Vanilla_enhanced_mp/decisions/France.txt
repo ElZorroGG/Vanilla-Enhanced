@@ -259,7 +259,7 @@ political_decisions = {
 		}
 	}
         #French argelia
-	Argelia_is_ours = {
+	Algeria_is_ours = {
 		picture = african_land
 		potential = {
 			THIS = {
@@ -297,6 +297,8 @@ political_decisions = {
 			1724 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }
 			1719 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }
 			1721 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }
+			1741 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }
+			1743 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }
 			prestige = 5
 		}
 	}

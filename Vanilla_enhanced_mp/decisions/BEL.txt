@@ -33,7 +33,7 @@ political_decisions = {
     international_african_association_for_Belgium = {
         picture = the_congo_conference
         potential = {
-            year = 1870
+            year = 1880
 	    tag = BEL
             any_owned_province = { port = yes }
             NOT = {
@@ -79,7 +79,7 @@ political_decisions = {
     international_african_association = {
         picture = the_congo_conference
         potential = {
-            year = 1871
+            year = 1881
             capital_scope = { continent = europe }
             NOT = {
                 tag = TUR

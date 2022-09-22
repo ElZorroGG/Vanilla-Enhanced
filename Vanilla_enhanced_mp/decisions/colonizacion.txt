@@ -181,6 +181,7 @@ political_decisions = {
 			1793 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }
 			1791 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }
 			1790 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }	
+			1789 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 5 }	
 			prestige = 5
 		}
 	}
@@ -214,13 +215,12 @@ political_decisions = {
 		}
 	}
 	Annexation_of_Kong = {
-		picture = african_land
+		picture = africa2
 		potential = {
 			owns = 1897
 			THIS = { capital_scope = { continent = europe } }
 			NOT = { tag = TUR
 				 tag = RUS } 
-			year = 1872
 			1898 = { owner = { civilized = no } }
 			NOT = {
 				has_country_flag = anexation_of_kon
@@ -229,6 +229,7 @@ political_decisions = {
 		
 		allow = {
 			is_greater_power = yes
+			year = 1871
 		}
 		
 		effect = {
@@ -242,14 +243,12 @@ political_decisions = {
 	}
 	
 	Berlin_Conference = {
+		picture = africa2
 		potential = {
 			is_greater_power = yes
-			#invention = expansionism
-			OR = { tag = PRU
-					tag = FRA
-					tag = GER
-					tag = NGF
-					tag = ENG }
+			invention = expansionism
+			owns = 549
+			
 			year = 1870
 			NOT = {
 				has_global_flag = berlin_conference_held
@@ -266,8 +265,11 @@ political_decisions = {
 	}
 	
 	Scramble_for_Africa = {
+		picture = africa2
 		potential = {
 		NOT = { year = 1885 }
+		NOT = { tag = TUR }
+		NOT = { tag = RUS }
 		THIS = { OR = { is_greater_power = yes is_secondary_power = yes } }
 			has_global_flag = berlin_conference_held
 			capital_scope = { continent = europe }

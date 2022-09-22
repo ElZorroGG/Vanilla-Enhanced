@@ -65,6 +65,7 @@ country_event = {
         	EGY_921 = { remove_core = EGY } 
 		EGY_910 = { remove_core = EGY } 
         	1156 = { remove_core = EGY } 
+        	900 = { remove_core = EGY } 
         	894 = { remove_core = EGY } 
         	896 = { remove_core = EGY } #Chania
         	898 = { remove_core = EGY } #Iraklion

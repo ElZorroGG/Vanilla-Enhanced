@@ -28,7 +28,12 @@ country_event = {
 			JRD = { all_core = { secede_province = JRD } }
 			ISR = { all_core = { secede_province = ISR } }
 			ETH = { all_core = { secede_province = JRD } }
-			EGY = { all_core = { secede_province = ISR } }}
+			EGY = { all_core = { secede_province = EGY } }}        
+		any_country = {
+            limit = { vassal_of = THIS }
+            leave_alliance = THIS
+            country_event = 91307000
+        }
         any_country = {
             limit = {
                 OR = {
@@ -74,6 +79,30 @@ country_event = {
                 country_event = 96018
             }
         }
+        any_country = {
+            limit = {
+                exists = yes
+                any_core = { owned_by = THIS }
+                NOT = { this_culture_union = THIS }
+                OR = {
+                    truce_with = THIS
+                    AND = {
+                        has_country_flag = coalition_member
+                    }
+					exists = yes
+                }
+            }
+            all_core = {
+                limit = {
+                    is_core = THIS
+                    state_scope = {
+                        NOT = { any_owned_province = { is_capital = yes } }
+                    }
+                }
+                remove_core = THIS
+            }
+            country_event = 96014
+        }
 
 		ai_chance = {
 			factor = 100 }
@@ -103,9 +132,6 @@ country_event = {
             }
         }
         random_owned = {
-            limit = {
-                owner = { num_of_cities = 20 }
-            }
             owner = {
                 any_neighbor_country = {
                     limit = {
@@ -175,6 +201,37 @@ country_event = {
             }
         }
         set_country_flag = newly_released_nation
+    }
+}
+# Any country involved in the Great War will automatically get all its cores returned
+country_event = {
+
+    id = 96014
+    title = "EVTNAME96014" #The Breakup of $FROMCOUNTRY$
+    desc = "EVTDESC96014"
+    picture = "treaty"
+
+    is_triggered_only = yes
+
+    immediate = {
+        FROM = {
+            any_state = {
+                limit = {
+                    any_owned_province = { is_core = THIS }
+                }
+                any_owned = {
+                    limit = {
+                        is_core = THIS
+                        is_capital = no
+                    }
+                    secede_province = THIS
+                }
+            }
+        }
+    }
+
+    option = {
+        name = "EVTOPTA96014" #We simply wish our lands back
     }
 }
    country_event = {
